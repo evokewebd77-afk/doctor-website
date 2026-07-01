@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-3xl: 120rem;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+}
+
+.font-serif-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
