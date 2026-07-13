@@ -17,7 +17,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#f8fafe] font-sans text-gray-800 overflow-x-hidden pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-[calc(4.5rem+env(safe-area-inset-bottom))] w-full">
+      <div className="min-h-screen bg-[#f8fafe] font-sans text-gray-800 overflow-x-hidden pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-[calc(4.75rem+env(safe-area-inset-bottom))] w-full">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />

@@ -6,6 +6,8 @@ import {
   CLINIC_MAPS_URL,
   HOME_EMERGENCY_PHONE,
 } from '../data/constants'
+import { RI } from '../data/realisticIcons'
+import RealisticIcon from './RealisticIcon'
 import MobileNavBar from './MobileNavBar'
 
 export default function BottomBar() {
@@ -21,11 +23,32 @@ export default function BottomBar() {
     }
     window.location.href = `tel:${callPhone}`
   }
+
   return (
     <>
       <MobileNavBar />
 
-      {/* Desktop — full action bar */}
+      {/* Mobile only — floating call & WhatsApp */}
+      <div className="md:hidden fixed right-4 z-[60] flex flex-col gap-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] pointer-events-none">
+        <a
+          href={CLINIC_WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-[0_6px_20px_rgba(16,42,94,0.18)] ring-1 ring-gray-100 transition-transform hover:scale-105 active:scale-95"
+          aria-label="Chat on WhatsApp"
+        >
+          <RealisticIcon src={RI.whatsapp} alt="WhatsApp" size="xs" className="w-7 h-7" />
+        </a>
+        <a
+          href={`tel:${callPhone}`}
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-[0_6px_20px_rgba(16,42,94,0.18)] ring-1 ring-gray-100 transition-transform hover:scale-105 active:scale-95"
+          aria-label="Call us"
+        >
+          <RealisticIcon src={RI.phone} alt="Call" size="xs" className="w-7 h-7" />
+        </a>
+      </div>
+
+      {/* Desktop — unchanged full action bar */}
       <div className="hidden md:block fixed bottom-0 inset-x-0 z-50 bg-[#102a5e] text-white shadow-[0_-4px_24px_rgba(0,0,0,0.2)] rounded-t-xl pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div className="flex items-center justify-between px-4 md:px-6 pt-3 max-w-[1680px] mx-auto">
           <a
