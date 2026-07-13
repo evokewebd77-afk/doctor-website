@@ -6,6 +6,7 @@ import {
   CLINIC_ADDRESS_LINE2,
   CLINIC_FACILITIES,
   CLINIC_MAPS_EMBED_URL,
+  CLINIC_MAPS_URL,
   CLINIC_PHONE,
   CLINIC_PHONE_DISPLAY_FULL,
 } from '../../data/constants'
@@ -25,9 +26,17 @@ export default function ContactMapWhy() {
             <iframe
               title="Family Cure Clinic location"
               src={CLINIC_MAPS_EMBED_URL}
-              className="absolute inset-0 w-full h-full border-0"
+              className="absolute inset-0 h-full w-full border-0 pointer-events-none"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              tabIndex={-1}
+            />
+            <a
+              href={CLINIC_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 z-10 cursor-pointer"
+              aria-label="Open Family Cure Clinic in Google Maps"
             />
           </div>
           <div className="px-5 py-3.5 border-t border-gray-100 space-y-1">
@@ -36,6 +45,15 @@ export default function ContactMapWhy() {
               <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" strokeWidth={2} />
               {CLINIC_ADDRESS}
             </p>
+            <a
+              href={CLINIC_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 text-[10px] sm:text-xs font-semibold inline-flex items-center gap-1 hover:underline"
+            >
+              <MapPin className="w-3 h-3" strokeWidth={2} />
+              Open in Google Maps
+            </a>
             <a
               href={`tel:${CLINIC_PHONE}`}
               className="text-blue-600 text-[10px] sm:text-xs font-semibold inline-flex items-center gap-1 hover:underline"

@@ -1,21 +1,26 @@
 import { Calendar, Phone, MessageCircle, MapPin } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 import {
   CLINIC_PHONE,
   CLINIC_WHATSAPP_URL,
   CLINIC_MAPS_URL,
+  HOME_EMERGENCY_PHONE,
 } from '../data/constants'
 import MobileNavBar from './MobileNavBar'
 
-const scrollToBook = () => {
-  const target = document.getElementById('book-appointment')
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    return
-  }
-  window.location.href = `tel:${CLINIC_PHONE}`
-}
-
 export default function BottomBar() {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+  const callPhone = isHomePage ? HOME_EMERGENCY_PHONE : CLINIC_PHONE
+
+  const scrollToBook = () => {
+    const target = document.getElementById('book-appointment')
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    window.location.href = `tel:${callPhone}`
+  }
   return (
     <>
       <MobileNavBar />
@@ -24,7 +29,7 @@ export default function BottomBar() {
       <div className="hidden md:block fixed bottom-0 inset-x-0 z-50 bg-[#102a5e] text-white shadow-[0_-4px_24px_rgba(0,0,0,0.2)] rounded-t-xl pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div className="flex items-center justify-between px-4 md:px-6 pt-3 max-w-[1680px] mx-auto">
           <a
-            href={`tel:${CLINIC_PHONE}`}
+            href={`tel:${callPhone}`}
             className="flex flex-row items-center gap-2 flex-1 justify-center border-r border-white/20 py-1 hover:text-blue-200 transition-colors"
             aria-label="Call us"
           >

@@ -176,7 +176,7 @@ export default function ObstetricsGynaecologyPage() {
             className="h-full w-full object-cover object-center"
           />
         </div>
-        <Header variant="transparent" />
+        <Header />
 
         <div className={`${PAGE_MAX} relative z-10 pt-4 sm:pt-5 pb-8 sm:pb-10`}>
           <div className="mb-5 flex flex-wrap items-center gap-1.5 text-[11px] sm:text-xs text-gray-400">

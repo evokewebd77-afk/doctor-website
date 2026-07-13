@@ -16,7 +16,9 @@ import RealisticIcon from '../components/RealisticIcon'
 import {
   PAGE_MAX,
   CLINIC_PHONE,
-  CLINIC_PHONE_DISPLAY,
+  CLINIC_PHONE_DISPLAY_FULL,
+  CLINIC_WHATSAPP_URL,
+  TRUST_BANNER_IMAGE,
 } from '../data/constants'
 import { RI } from '../data/realisticIcons'
 import { DOCTORS_LIST } from '../data/doctorsData'
@@ -34,9 +36,6 @@ const NEWBORN_IMAGE =
 
 const CHILD_IMAGE =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783917516/326adf79-3eba-4cb1-9ca0-e501b8d251da_p899ro.png'
-
-const CTA_BANNER =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783917513/717c8998-8905-48e9-a49d-57c0b09ca5c0-removebg-preview_bfoqza.png'
 
 const HERO_FEATURES = [
   { label: 'Newborn Care', sublabel: 'Gentle care for healthy newborns.', icon: RI.baby, accent: 'pink' },
@@ -184,7 +183,7 @@ export default function PediatricsNeonatologyPage() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.88)_0%,rgba(255,255,255,0.72)_42%,rgba(255,255,255,0.25)_100%)]" />
         </div>
-        <Header variant="transparent" />
+        <Header />
 
         <div className={`${PAGE_MAX} relative z-10 pt-4 sm:pt-5 pb-8 sm:pb-10`}>
           <div className="mb-5 flex flex-wrap items-center gap-1.5 text-[11px] sm:text-xs text-gray-400">
@@ -361,7 +360,7 @@ export default function PediatricsNeonatologyPage() {
         </div>
       </section>
 
-      <section id="book-appointment" className={`${PAGE_MAX} py-10 sm:py-12 lg:py-14 scroll-mt-20`}>
+      <section id="book-appointment" className={`${PAGE_MAX} pt-10 sm:pt-12 lg:pt-14 pb-4 sm:pb-5 scroll-mt-20`}>
         <div className="overflow-hidden rounded-3xl border border-[#1a3468] bg-[#0b1f45] shadow-[0_20px_60px_rgba(11,31,69,0.4)]">
           <div className="grid lg:grid-cols-[minmax(280px,36%)_1fr]">
             <div className="relative flex flex-col overflow-hidden border-b border-[#1a3468] p-6 sm:p-8 lg:border-b-0 lg:border-r">
@@ -526,37 +525,16 @@ export default function PediatricsNeonatologyPage() {
         </div>
       </section>
 
-      <section className={`${PAGE_MAX} py-10 sm:py-12`}>
-        <div className="relative overflow-hidden rounded-3xl border border-purple-100 shadow-[0_8px_32px_rgba(16,42,94,0.08)]">
-          <CloudinaryImage
-            src={CTA_BANNER}
-            alt="Your Child's Health, Our Priority"
-            variant="hero"
-            className="h-auto w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 pb-6 pt-[38%] sm:px-10 sm:pb-8 sm:pt-[32%]">
-            <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              <a
-                href="#book-appointment"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-blue-700"
-              >
-                Book Appointment
-                <Calendar className="h-4 w-4" />
-              </a>
-              <a
-                href={`tel:${CLINIC_PHONE}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-600 bg-white px-6 py-3 text-sm font-semibold text-blue-600 hover:bg-blue-50"
-              >
-                Call Now
-                <Phone className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className={`${PAGE_MAX} space-y-3 pb-4 sm:space-y-4 sm:pb-6`}>
+        <img
+          src={TRUST_BANNER_IMAGE}
+          alt="Your Child's Health, Our Priority"
+          loading="lazy"
+          decoding="async"
+          className="media-hd block h-auto w-full max-h-[150px] object-contain object-center sm:max-h-[170px] lg:max-h-[190px]"
+        />
 
-      <section className={`${PAGE_MAX} space-y-5 pb-4 sm:space-y-6`}>
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-4">
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-4">
           <div className="grid gap-3 sm:grid-cols-3 sm:gap-4 lg:col-span-3">
             {INFO_ITEMS.map((item) => (
               <div key={item.title} className="flex items-center gap-3 rounded-2xl border border-gray-100 bg-white px-4 py-4 shadow-[0_4px_20px_rgba(16,42,94,0.06)]">
@@ -579,9 +557,13 @@ export default function PediatricsNeonatologyPage() {
             <p className="mb-3 text-[11px] leading-relaxed text-white/60 sm:text-xs">
               Call us for appointment booking or questions.
             </p>
-            <a href={`tel:${CLINIC_PHONE}`} className="flex items-center gap-2 text-base font-bold text-white hover:text-pink-300 sm:text-lg">
-              <Phone className="h-5 w-5" />
-              {CLINIC_PHONE_DISPLAY}
+            <a
+              href={CLINIC_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-red-300 px-3 py-1.5 text-sm font-semibold text-red-600 transition-colors hover:bg-red-50 sm:text-base"
+            >
+              {CLINIC_PHONE_DISPLAY_FULL}
             </a>
             <p className="mt-2 text-[10px] text-white/40">Mon - Sat: 9:00 AM - 8:00 PM</p>
             <p className="text-[10px] text-white/40">Sunday: 10:00 AM - 2:00 PM</p>
@@ -589,9 +571,12 @@ export default function PediatricsNeonatologyPage() {
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-[#233f7a] bg-[#0d2147] shadow-[0_12px_40px_rgba(13,33,71,0.24)]">
-          <div className="grid grid-cols-2 divide-y divide-white/10 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+          <div className="flex flex-wrap divide-y divide-white/10 sm:flex-nowrap sm:divide-x sm:divide-y-0">
             {STATS.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1.5 px-4 py-6 text-center sm:py-7">
+              <div
+                key={stat.label}
+                className="flex w-1/2 flex-1 flex-col items-center gap-1.5 px-4 py-4 text-center sm:w-auto sm:py-5"
+              >
                 <RealisticIcon src={stat.icon} alt={stat.label} size="xs" className="opacity-90" />
                 <p className="text-[24px] font-bold leading-none text-white sm:text-[28px]">{stat.value}</p>
                 <p className="text-[10px] text-white/60 sm:text-xs">{stat.label}</p>
@@ -601,7 +586,7 @@ export default function PediatricsNeonatologyPage() {
         </div>
       </section>
 
-      <section className={`${PAGE_MAX} pb-10 sm:pb-12`}>
+      <section className={`${PAGE_MAX} pt-4 pb-10 sm:pb-12`}>
         <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
           <div className="grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-5 lg:divide-x">
             {FEATURE_STRIP.map((item) => (

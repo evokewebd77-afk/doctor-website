@@ -8,7 +8,7 @@ import CloudinaryVideo from '../media/CloudinaryVideo'
 export default function HomeCareHero() {
   return (
     <section className="relative w-full bg-[#f8fafe]">
-      <Header variant="solid" />
+      <Header />
 
       <div className="relative w-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px]">
         {/* Full hero video background */}

@@ -18,7 +18,7 @@ export default function DoctorsHero() {
         />
       </div>
 
-      <Header variant="solid" />
+      <Header />
 
       <div
         className={`relative z-10 flex-1 ${PAGE_MAX} pt-8 sm:pt-10 lg:pt-12 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-end`}

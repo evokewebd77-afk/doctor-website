@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Calendar, Menu, X } from 'lucide-react'
-import { NAV_LINKS, NAV_ROUTES, PAGE_MAX, CLINIC_LOGO } from '../data/constants'
+import { Calendar, Menu, PhoneCall, X } from 'lucide-react'
+import { NAV_LINKS, NAV_ROUTES, PAGE_MAX, CLINIC_LOGO, CLINIC_PHONE, CLINIC_PHONE_DISPLAY, HOME_EMERGENCY_PHONE, HOME_EMERGENCY_PHONE_DISPLAY } from '../data/constants'
 
 const NAV_TEXT_SHADOW =
   'drop-shadow-[0_1px_2px_rgba(255,255,255,1)] drop-shadow-[0_0_10px_rgba(255,255,255,0.85)] drop-shadow-[0_1px_3px_rgba(11,31,69,0.25)]'
 
-export default function Header({ variant = 'transparent' }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const isSolid = variant === 'solid'
+  const isHomePage = location.pathname === '/'
+  const emergencyPhone = isHomePage ? HOME_EMERGENCY_PHONE : CLINIC_PHONE
+  const emergencyPhoneDisplay = isHomePage ? HOME_EMERGENCY_PHONE_DISPLAY : CLINIC_PHONE_DISPLAY
 
   const isActive = (link) => {
     const path = NAV_ROUTES[link] || '/'
@@ -21,24 +23,13 @@ export default function Header({ variant = 'transparent' }) {
 
   const navLinkClass = (link) => {
     const active = isActive(link)
-    if (isSolid) {
-      return active
-        ? 'text-[#0b1f45] font-bold'
-        : 'text-[#1e3a6e] font-semibold hover:text-[#0b1f45]'
-    }
     return active
       ? `text-[#0b1f45] font-bold ${NAV_TEXT_SHADOW}`
       : `text-[#102a5e] font-semibold hover:text-[#0b1f45] ${NAV_TEXT_SHADOW}`
   }
 
   return (
-    <header
-      className={`relative sticky top-0 z-50 w-full overflow-visible ${
-        isSolid
-          ? 'border-b border-gray-200/80 bg-white/98 shadow-[0_2px_16px_rgba(11,31,69,0.06)] backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className="relative sticky top-0 z-50 w-full overflow-visible bg-transparent">
       <Link
         to="/"
         className="absolute top-0 left-4 sm:left-6 md:left-8 lg:left-10 xl:left-12 2xl:left-16 z-[60] inline-block bg-transparent"
@@ -52,13 +43,7 @@ export default function Header({ variant = 'transparent' }) {
 
       <div className={`${PAGE_MAX} relative h-12 sm:h-14 z-50`}>
         <div className="flex h-full items-center justify-end md:justify-between md:pl-[10rem] lg:pl-[12rem] xl:pl-[13rem] gap-3 sm:gap-6">
-          <nav
-            className={`hidden md:flex items-center gap-1 lg:gap-1.5 xl:gap-2 flex-1 justify-center ${
-              !isSolid
-                ? 'rounded-full border border-white/60 bg-white/75 px-3 py-1 shadow-[0_4px_20px_rgba(11,31,69,0.1)] backdrop-blur-md lg:px-4'
-                : ''
-            }`}
-          >
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5 xl:gap-2 flex-1 justify-center rounded-full bg-white/75 px-3 py-1 shadow-[0_4px_20px_rgba(11,31,69,0.1)] backdrop-blur-md lg:px-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link}
@@ -73,14 +58,40 @@ export default function Header({ variant = 'transparent' }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+            <a
+              href={`tel:${emergencyPhone}`}
+              className="flex sm:hidden items-center justify-center gap-1 rounded-full bg-red-600 px-2.5 py-1.5 text-white shadow-[0_2px_10px_rgba(220,38,38,0.35)] hover:bg-red-700"
+              aria-label={`Emergency call ${emergencyPhoneDisplay}`}
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
+              </span>
+              <PhoneCall className="w-3.5 h-3.5" />
+            </a>
             <Link
               to="/contact"
-              className={`hidden sm:flex items-center gap-2 rounded-full pl-4 xl:pl-5 pr-3 xl:pr-4 py-2 font-bold transition-colors text-[10px] xl:text-[11px] tracking-wide shadow-md ${
-                isSolid
-                  ? 'bg-[#0b1f45] text-white hover:bg-[#102a5e]'
-                  : 'bg-[#0b1f45] text-white hover:bg-[#102a5e] shadow-[0_4px_14px_rgba(11,31,69,0.35)]'
-              }`}
+              className="flex sm:hidden items-center justify-center gap-1 rounded-full bg-[#0b1f45] px-2.5 py-1.5 text-[9px] font-bold tracking-wide text-white shadow-md hover:bg-[#102a5e]"
+              aria-label="Book appointment"
+            >
+              Book
+              <Calendar className="w-3 h-3" />
+            </Link>
+            <a
+              href={`tel:${emergencyPhone}`}
+              className="hidden sm:flex items-center gap-2 rounded-full pl-4 xl:pl-5 pr-3 xl:pr-4 py-2 font-bold transition-colors text-[10px] xl:text-[11px] tracking-wide bg-red-600 text-white shadow-[0_4px_14px_rgba(220,38,38,0.4)] hover:bg-red-700"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+              </span>
+              EMERGENCY
+              <PhoneCall className="w-3.5 h-3.5" />
+            </a>
+            <Link
+              to="/contact"
+              className="hidden sm:flex items-center gap-2 rounded-full pl-4 xl:pl-5 pr-3 xl:pr-4 py-2 font-bold transition-colors text-[10px] xl:text-[11px] tracking-wide shadow-md bg-[#0b1f45] text-white hover:bg-[#102a5e] shadow-[0_4px_14px_rgba(11,31,69,0.35)]"
             >
               BOOK APPOINTMENT
               <Calendar className="w-3.5 h-3.5" />
@@ -88,11 +99,7 @@ export default function Header({ variant = 'transparent' }) {
             <button
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
-              className={`p-2 rounded-full md:hidden transition-colors ${
-                isSolid
-                  ? 'border border-gray-300 bg-white text-[#0b1f45] hover:bg-gray-50'
-                  : 'border border-[#0b1f45]/25 bg-white/90 text-[#0b1f45] shadow-sm backdrop-blur-sm hover:bg-white'
-              }`}
+              className="p-2 rounded-full md:hidden transition-colors bg-white/90 text-[#0b1f45] shadow-sm backdrop-blur-sm hover:bg-white"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
@@ -107,7 +114,7 @@ export default function Header({ variant = 'transparent' }) {
       )}
 
       <div
-        className={`md:hidden absolute left-0 right-0 top-full z-50 border-b border-gray-200 bg-white shadow-lg transition-all duration-300 overflow-hidden ${
+        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-white shadow-lg transition-all duration-300 overflow-hidden ${
           menuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
@@ -126,14 +133,14 @@ export default function Header({ variant = 'transparent' }) {
               {link}
             </Link>
           ))}
-          <Link
-            to="/contact"
+          <a
+            href={`tel:${emergencyPhone}`}
             onClick={() => setMenuOpen(false)}
-            className="mt-2 flex items-center justify-center gap-2 bg-[#0b1f45] text-white px-5 py-3 rounded-full font-bold text-sm tracking-wide sm:hidden"
+            className="mt-2 flex items-center justify-center gap-2 bg-red-600 text-white px-5 py-3 rounded-full font-bold text-sm tracking-wide sm:hidden"
           >
-            BOOK APPOINTMENT
-            <Calendar className="w-4 h-4" />
-          </Link>
+            <PhoneCall className="w-4 h-4" />
+            EMERGENCY · {emergencyPhoneDisplay}
+          </a>
         </nav>
       </div>
     </header>

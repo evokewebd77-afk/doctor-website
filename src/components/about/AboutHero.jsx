@@ -6,7 +6,7 @@ import CloudinaryVideo from '../media/CloudinaryVideo'
 export default function AboutHero() {
   return (
     <section className="relative w-full bg-[#f8fafe]">
-      <Header variant="solid" />
+      <Header />
 
       <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
         <div className="absolute inset-0 overflow-hidden">

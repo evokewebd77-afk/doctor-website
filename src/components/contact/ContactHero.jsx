@@ -8,7 +8,7 @@ import CloudinaryVideo from '../media/CloudinaryVideo'
 export default function ContactHero() {
   return (
     <section className="relative w-full bg-[#f8fafe]">
-      <Header variant="solid" />
+      <Header />
 
       <div className="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[540px]">
         <div className="absolute inset-0 overflow-hidden">

@@ -79,7 +79,7 @@ export const CONTACT_INFO_ROWS = [
     image: RI.ambulance,
     title: 'Emergency / 24x7 Support',
     lines: ["For medical emergencies, we're available 24x7 for immediate assistance."],
-    badge: { label: CLINIC_PHONE_DISPLAY_FULL, href: `tel:${CLINIC_PHONE}`, style: 'border-red-300 text-red-600' },
+    badge: { label: CLINIC_PHONE_DISPLAY_FULL, href: CLINIC_WHATSAPP_URL, style: 'border-red-300 text-red-600' },
   },
   {
     image: RI.video,

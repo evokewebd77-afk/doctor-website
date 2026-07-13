@@ -37,7 +37,7 @@ export default function GMHero() {
         />
       </div>
 
-      <Header variant="transparent" />
+      <Header />
 
       <div className={`relative z-10 ${PAGE_MAX} pt-2 sm:pt-4`}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">

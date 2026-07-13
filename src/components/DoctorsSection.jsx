@@ -40,13 +40,16 @@ export default function DoctorsSection() {
               <p className="text-[#c2410c] text-[10px] lg:text-[11px] font-medium mt-1 leading-snug">{doctor.qualifications}</p>
               <p className="text-blue-600 text-[12px] font-semibold mt-1">{doctor.specialty}</p>
               <p className="text-gray-500 text-[11px] lg:text-xs leading-relaxed mt-2 line-clamp-3">{doctor.bio}</p>
-              <button
-                type="button"
-                className="mt-3 self-start text-[10px] font-bold text-blue-600 border border-blue-400 px-3.5 py-1.5 rounded-full flex items-center gap-1 hover:bg-blue-50 transition-colors uppercase tracking-wide"
+              {doctor.highlights?.[0] && (
+                <p className="mt-2 text-[10px] font-semibold text-[#64748b]">{doctor.highlights[0].text}</p>
+              )}
+              <Link
+                to="/doctors"
+                className="mt-3 self-start flex items-center gap-1 rounded-full border border-blue-400 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wide text-blue-600 transition-colors hover:bg-blue-50"
               >
-                View Profile
-                <ArrowRight className="w-3 h-3" />
-              </button>
+                Learn More
+                <ArrowRight className="h-3 w-3" />
+              </Link>
             </div>
           </div>
         ))}

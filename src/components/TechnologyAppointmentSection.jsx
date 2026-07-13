@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Calendar, Clock, ChevronDown } from 'lucide-react'
-import { PAGE_MAX } from '../data/constants'
+import { CLINIC_WHATSAPP_URL, PAGE_MAX } from '../data/constants'
 import CloudinaryImage from './media/CloudinaryImage'
 
 const TECH_BG =
@@ -102,14 +102,29 @@ export default function TechnologyAppointmentSection() {
               </div>
             </div>
 
+            <textarea
+              rows={3}
+              placeholder="Message (optional)"
+              className="w-full resize-none px-4 py-3 rounded-xl bg-white text-gray-800 text-sm placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-blue-300"
+            />
+
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-[#f0f2f5] text-[#102a5e] py-3.5 rounded-xl font-bold text-sm hover:bg-white transition-colors mt-1 sm:mt-2 uppercase tracking-wide"
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a017] via-[#f5c842] to-[#eab308] py-3.5 text-sm font-bold uppercase tracking-wide text-[#0b1f45] shadow-[0_8px_24px_rgba(212,160,23,0.35)] transition-all hover:brightness-105 sm:mt-2"
             >
               Confirm Appointment
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
+
+          <a
+            href={CLINIC_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 text-center text-xs font-medium text-white/80 transition-colors hover:text-[#f5c842] sm:text-sm"
+          >
+            Prefer WhatsApp? <span className="font-semibold underline underline-offset-2">Chat with us</span>
+          </a>
         </div>
       </div>
     </section>

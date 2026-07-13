@@ -34,16 +34,21 @@ const SPECIALITIES = [
 export default function SpecialitiesSection() {
   return (
     <section className={`${PAGE_MAX} pt-4 sm:pt-6 pb-6 sm:pb-8 lg:py-10 w-full`}>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-5 sm:mb-6 lg:mb-8">
-        <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-[2rem] xl:text-3xl font-bold text-[#102a5e]">
-          Our Specialities
-        </h2>
+      <div className="mb-5 flex flex-col gap-3 sm:mb-6 sm:flex-row sm:items-end sm:justify-between sm:gap-4 lg:mb-8">
+        <div>
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-blue-600 sm:text-[11px]">
+            Our Specialities
+          </p>
+          <h2 className="font-serif-display text-2xl font-bold text-[#102a5e] sm:text-3xl lg:text-[2rem] xl:text-3xl">
+            Comprehensive Care for Every Stage of Life
+          </h2>
+        </div>
         <Link
           to="/services"
-          className="text-xs sm:text-sm font-semibold text-blue-600 flex items-center gap-1.5 hover:underline shrink-0"
+          className="flex shrink-0 items-center gap-1.5 text-xs font-semibold text-blue-600 hover:underline sm:text-sm"
         >
-          VIEW ALL SPECIALITIES
-          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          View All Specialities
+          <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
         </Link>
       </div>
 
@@ -69,9 +74,9 @@ export default function SpecialitiesSection() {
             <div className="px-5 sm:px-6 pt-8 sm:pt-9 pb-5 sm:pb-6">
               <h3 className="font-bold text-[#102a5e] text-base sm:text-lg mb-2">{item.title}</h3>
               <p className="text-gray-500 text-[13px] sm:text-sm leading-relaxed mb-4 sm:mb-5">{item.desc}</p>
-              <Link to={item.to} className="text-[13px] sm:text-sm font-semibold text-blue-600 flex items-center gap-1.5 hover:underline">
-                KNOW MORE
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <Link to={item.to} className="flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:underline sm:text-sm">
+                Learn More
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               </Link>
             </div>
           </div>

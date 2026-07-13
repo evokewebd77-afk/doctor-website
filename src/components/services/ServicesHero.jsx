@@ -8,7 +8,7 @@ import CloudinaryImage from '../media/CloudinaryImage'
 export default function ServicesHero() {
   return (
     <section className="relative w-full bg-[#f8fafe]">
-      <Header variant="solid" />
+      <Header />
 
       <div className="relative w-full min-h-[480px] sm:min-h-[540px] lg:min-h-[580px]">
         <div className="absolute inset-0 overflow-hidden">

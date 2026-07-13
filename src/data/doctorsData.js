@@ -27,7 +27,7 @@ export const DOCTORS_LIST = [
     specialty: 'Obstetrics & Gynaecology',
     rating: '4.9',
     bio: "Specialist in pregnancy care, high-risk pregnancy, infertility evaluation and comprehensive women's health at every life stage.",
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782807406/ChatGPT_Image_Jun_30_2026_01_04_44_PM_2_gjy2cd.png',
+    image: 'https://res.cloudinary.com/j6lurplk/image/upload/v1783922518/WhatsApp_Image_2026-07-04_at_1.29.18_PM_1_zg2izd.jpg',
     highlights: [
       { text: '12+ Years of Experience', icon: RI.calendar },
       { text: 'Pregnancy & Maternity Care', icon: RI.baby },
@@ -41,7 +41,7 @@ export const DOCTORS_LIST = [
     specialty: 'Pediatrics & Neonatology',
     rating: '4.8',
     bio: 'Dedicated to child care, newborn care, immunization, growth monitoring and compassionate treatment for infants and adolescents.',
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782807405/ChatGPT_Image_Jun_30_2026_01_04_43_PM_1_dqytyw.png',
+    image: 'https://res.cloudinary.com/j6lurplk/image/upload/v1783922519/WhatsApp_Image_2026-07-04_at_1.29.18_PM_lys1pa.jpg',
     highlights: [
       { text: '10+ Years of Experience', icon: RI.calendar },
       { text: 'Newborn & Child Care', icon: RI.baby },
