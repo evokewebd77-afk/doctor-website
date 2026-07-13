@@ -3,6 +3,7 @@ import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
 import { CONTACT_HERO_VIDEO, CONTACT_CARDS } from '../../data/contactData'
 import Header from '../Header'
 import RealisticIcon from './RealisticIcon'
+import CloudinaryVideo from '../media/CloudinaryVideo'
 
 export default function ContactHero() {
   return (
@@ -11,17 +12,12 @@ export default function ContactHero() {
 
       <div className="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[540px]">
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-[65%_center] sm:object-right pointer-events-none"
+          <CloudinaryVideo
+            src={CONTACT_HERO_VIDEO}
+            className="absolute inset-0 w-full h-full object-[65%_center] sm:object-right pointer-events-none"
+            objectPosition="65% center"
             aria-hidden
-          >
-            <source src={CONTACT_HERO_VIDEO} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/20 sm:from-white/95 sm:via-white/70 sm:to-transparent lg:from-white/80 lg:via-white/40 lg:to-transparent" />
+          />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[400px] sm:min-h-[440px] lg:min-h-[480px] pt-6 sm:pt-10 pb-28 sm:pb-32`}>

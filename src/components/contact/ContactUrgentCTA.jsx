@@ -1,15 +1,17 @@
 import { Phone, MessageCircle } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE, CLINIC_PHONE_DISPLAY_FULL, CLINIC_WHATSAPP_URL } from '../../data/constants'
 import { CONTACT_URGENT_BG } from '../../data/contactData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function ContactUrgentCTA() {
   return (
     <section className={`${PAGE_MAX} pb-10 sm:pb-14 w-full`}>
       <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl min-h-[200px] sm:min-h-[220px] lg:min-h-[240px]">
-        <img
+        <CloudinaryImage
           src={CONTACT_URGENT_BG}
           alt=""
           aria-hidden
+          variant="hero"
           className="absolute inset-0 w-full h-full object-cover object-left pointer-events-none select-none"
         />
 

@@ -1,6 +1,7 @@
 import { PAGE_MAX } from '../../data/constants'
 import { ABOUT_WHY_CHOOSE, ABOUT_WHY_CHOOSE_IMAGE } from '../../data/aboutData'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function AboutWhyChoose() {
   return (
@@ -31,11 +32,11 @@ export default function AboutWhyChoose() {
 
         <div className="relative">
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(16,42,94,0.1)] border border-gray-100">
-            <img
+            <CloudinaryImage
               src={ABOUT_WHY_CHOOSE_IMAGE}
               alt="Doctor caring for a patient and family member"
+              variant="hero"
               className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[5/4]"
-              loading="lazy"
             />
           </div>
         </div>

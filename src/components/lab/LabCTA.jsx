@@ -1,15 +1,17 @@
 import { Calendar, ClipboardList } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { LAB_CTA_IMAGE } from '../../data/labServicesData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function LabCTA() {
   return (
     <section id="book-appointment" className={`${PAGE_MAX} py-8 sm:py-10 w-full scroll-mt-20`}>
       <div className="relative w-full rounded-3xl overflow-hidden h-[200px] sm:h-[240px] lg:h-[270px]">
-        <img
+        <CloudinaryImage
           src={LAB_CTA_IMAGE}
           alt=""
           aria-hidden
+          variant="hero"
           className="absolute inset-0 w-full h-full object-cover object-right"
         />
 

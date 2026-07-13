@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PAGE_MAX } from '../data/constants'
 import { DOCTORS_LIST } from '../data/doctorsData'
+import CloudinaryImage from './media/CloudinaryImage'
 
 export default function DoctorsSection() {
   return (
@@ -26,9 +27,10 @@ export default function DoctorsSection() {
             className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-gray-100 flex flex-col md:flex-row min-h-0 md:min-h-[220px]"
           >
             <div className="w-full h-[200px] md:w-[118px] lg:w-[130px] md:h-auto shrink-0 bg-white flex items-end justify-center md:justify-start overflow-hidden">
-              <img
+              <CloudinaryImage
                 src={doctor.image}
                 alt={doctor.name}
+                variant="portrait"
                 className="w-full h-full md:h-[220px] lg:h-[230px] object-cover object-top"
               />
             </div>

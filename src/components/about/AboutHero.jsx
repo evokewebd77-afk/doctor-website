@@ -1,6 +1,7 @@
 import { PAGE_MAX } from '../../data/constants'
 import { ABOUT_HERO_VIDEO } from '../../data/aboutData'
 import Header from '../Header'
+import CloudinaryVideo from '../media/CloudinaryVideo'
 
 export default function AboutHero() {
   return (
@@ -9,16 +10,12 @@ export default function AboutHero() {
 
       <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-[70%_center] sm:object-right pointer-events-none"
+          <CloudinaryVideo
+            src={ABOUT_HERO_VIDEO}
+            className="absolute inset-0 w-full h-full object-[70%_center] sm:object-right pointer-events-none"
+            objectPosition="70% center"
             aria-hidden
-          >
-            <source src={ABOUT_HERO_VIDEO} type="video/mp4" />
-          </video>
+          />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] py-10 sm:py-14 lg:py-16`}>

@@ -25,3 +25,10 @@ body {
 .font-serif-display {
   font-family: 'Playfair Display', Georgia, serif;
 }
+
+/* Sharper rendering for photos & video on retina displays */
+.media-hd {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight, Star } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { SERVICES_DOCTORS } from '../../data/servicesData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function ServicesDoctors() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -19,9 +20,10 @@ export default function ServicesDoctors() {
       {/* Mobile: doctor carousel */}
       <div className="md:hidden">
         <div className="flex items-center gap-3 bg-white rounded-2xl p-3.5 shadow-[0_2px_16px_rgba(16,42,94,0.07)] border border-gray-100">
-          <img
+          <CloudinaryImage
             src={SERVICES_DOCTORS[activeIndex].image}
             alt={SERVICES_DOCTORS[activeIndex].name}
+            variant="portrait"
             className="w-16 h-16 rounded-full object-cover object-top shrink-0 border-2 border-blue-50"
           />
           <div className="flex-1 min-w-0">
@@ -85,7 +87,7 @@ export default function ServicesDoctors() {
             className="w-[260px] lg:w-[280px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-gray-100"
           >
             <div className="h-[220px] overflow-hidden bg-gray-50">
-              <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover object-top" />
+              <CloudinaryImage src={doctor.image} alt={doctor.name} variant="portrait" className="w-full h-full object-cover object-top" />
             </div>
             <div className="p-5 text-center">
               <h3 className="font-bold text-[#102a5e] text-[15px]">{doctor.name}</h3>

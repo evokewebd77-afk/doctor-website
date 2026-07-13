@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { FAMILY_IMG, PAGE_MAX } from '../data/constants'
 import { RI } from '../data/realisticIcons'
 import RealisticIcon from './RealisticIcon'
+import CloudinaryImage from './media/CloudinaryImage'
 
 const FEATURES = [
   { label: 'NABH', sub: 'Quality Care', icon: RI.shield },
@@ -16,9 +17,10 @@ export default function TrustBanner() {
       <div className="bg-white rounded-[18px] sm:rounded-[24px] px-4 py-5 sm:px-7 sm:py-5 md:px-9 md:py-6 shadow-[0_12px_40px_rgba(0,0,0,0.1)] border border-white">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 sm:gap-6">
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <img
+            <CloudinaryImage
               src={FAMILY_IMG}
               alt="Happy family"
+              variant="card"
               className="w-[80px] h-[60px] sm:w-[100px] sm:h-[76px] rounded-xl object-cover shrink-0"
             />
             <div className="min-w-0">

@@ -6,6 +6,9 @@ import HomeCarePage from './pages/HomeCarePage'
 import ContactPage from './pages/ContactPage'
 import AboutPage from './pages/AboutPage'
 import DoctorsPage from './pages/DoctorsPage'
+import GeneralMedicinePage from './pages/GeneralMedicinePage'
+import ObstetricsGynaecologyPage from './pages/ObstetricsGynaecologyPage'
+import PediatricsNeonatologyPage from './pages/PediatricsNeonatologyPage'
 import Footer from './components/Footer'
 import BottomBar from './components/BottomBar'
 import ScrollToTop from './components/ScrollToTop'
@@ -22,6 +25,9 @@ export default function App() {
           <Route path="/home-care" element={<HomeCarePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/services/general-medicine" element={<GeneralMedicinePage />} />
+          <Route path="/services/obstetrics-gynaecology" element={<ObstetricsGynaecologyPage />} />
+          <Route path="/services/pediatrics-neonatology" element={<PediatricsNeonatologyPage />} />
           <Route path="/doctors" element={<DoctorsPage />} />
         </Routes>
         <div className="hidden md:block">

@@ -1,6 +1,7 @@
 import { Calendar, Phone, Heart } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from '../../data/constants'
 import { SERVICES_CTA_IMAGE } from '../../data/servicesData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function ServicesCTA() {
   return (
@@ -14,10 +15,11 @@ export default function ServicesCTA() {
             fill="currentColor"
           />
           <div className="flex items-end justify-center pt-4 px-4">
-            <img
+            <CloudinaryImage
               src={SERVICES_CTA_IMAGE}
               alt=""
               aria-hidden
+              variant="portrait"
               className="w-28 h-auto object-contain"
             />
           </div>
@@ -50,7 +52,7 @@ export default function ServicesCTA() {
         {/* Desktop layout */}
         <div className="hidden md:flex flex-row">
           <div className="bg-[#dce8f8] shrink-0 flex items-end justify-center w-[140px] md:w-[160px] lg:w-[180px] px-2">
-            <img src={SERVICES_CTA_IMAGE} alt="" aria-hidden className="w-full h-auto object-contain object-bottom" />
+            <CloudinaryImage src={SERVICES_CTA_IMAGE} alt="" aria-hidden variant="portrait" className="w-full h-auto object-contain object-bottom" />
           </div>
           <div className="relative flex-1 bg-[#102a5e] px-8 lg:px-10 py-8 flex flex-row items-center justify-between gap-8">
             <Heart

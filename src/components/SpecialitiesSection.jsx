@@ -1,7 +1,9 @@
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { PAGE_MAX } from '../data/constants'
 import { RI } from '../data/realisticIcons'
 import RealisticIcon from './RealisticIcon'
+import CloudinaryImage from './media/CloudinaryImage'
 
 const SPECIALITIES = [
   {
@@ -9,6 +11,7 @@ const SPECIALITIES = [
     desc: 'Comprehensive primary care for adults with chronic disease management and preventive health.',
     icon: RI.stethoscope,
     image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782803298/ChatGPT_Image_Jun_30_2026_12_28_40_PM_ivxuql.png',
+    to: '/services/general-medicine',
   },
   {
     title: 'Obstetrics & Gynaecology',
@@ -16,13 +19,15 @@ const SPECIALITIES = [
     icon: RI.woman,
     image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782803293/obstetrics_gynaecology_separate_tpysnq.png',
     imageZoom: true,
+    to: '/services/obstetrics-gynaecology',
   },
   {
-    title: 'Pediatrics',
-    desc: 'Gentle, specialized care for infants, children and adolescents at every stage.',
+    title: 'Pediatrics & Neonatology',
+    desc: 'Specialized care for newborns, infants, children and adolescents at every stage.',
     icon: RI.baby,
     image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782803293/pediatrics_separate_eo81ya.png',
     imageZoom: true,
+    to: '/services/pediatrics-neonatology',
   },
 ]
 
@@ -33,13 +38,13 @@ export default function SpecialitiesSection() {
         <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-[2rem] xl:text-3xl font-bold text-[#102a5e]">
           Our Specialities
         </h2>
-        <a
-          href="#"
+        <Link
+          to="/services"
           className="text-xs sm:text-sm font-semibold text-blue-600 flex items-center gap-1.5 hover:underline shrink-0"
         >
           VIEW ALL SPECIALITIES
           <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-        </a>
+        </Link>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
@@ -49,9 +54,10 @@ export default function SpecialitiesSection() {
             className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] border border-gray-50"
           >
             <div className="relative h-[180px] sm:h-[220px] overflow-hidden">
-              <img
+              <CloudinaryImage
                 src={item.image}
                 alt={item.title}
+                variant="card"
                 className={`w-full h-full object-cover object-center ${
                   item.imageZoom ? 'scale-[1.18] origin-center' : ''
                 }`}
@@ -63,10 +69,10 @@ export default function SpecialitiesSection() {
             <div className="px-5 sm:px-6 pt-8 sm:pt-9 pb-5 sm:pb-6">
               <h3 className="font-bold text-[#102a5e] text-base sm:text-lg mb-2">{item.title}</h3>
               <p className="text-gray-500 text-[13px] sm:text-sm leading-relaxed mb-4 sm:mb-5">{item.desc}</p>
-              <a href="#" className="text-[13px] sm:text-sm font-semibold text-blue-600 flex items-center gap-1.5 hover:underline">
+              <Link to={item.to} className="text-[13px] sm:text-sm font-semibold text-blue-600 flex items-center gap-1.5 hover:underline">
                 KNOW MORE
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         ))}

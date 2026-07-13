@@ -1,15 +1,17 @@
 import { Calendar, Phone } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from '../../data/constants'
 import { HOME_CARE_CTA_IMAGE } from '../../data/homeCareData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function HomeCareCTA() {
   return (
     <section id="book-appointment" className={`${PAGE_MAX} py-6 sm:py-10 w-full scroll-mt-20`}>
       <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[240px] lg:h-[270px] bg-[#050a18]">
-        <img
+        <CloudinaryImage
           src={HOME_CARE_CTA_IMAGE}
           alt=""
           aria-hidden
+          variant="hero"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 

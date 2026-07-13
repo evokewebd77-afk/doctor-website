@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { LAB_TECH_IMAGE, LAB_TECH_CHECKLIST } from '../../data/labServicesData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function LabTechnology() {
   return (
@@ -37,9 +38,10 @@ export default function LabTechnology() {
         </div>
 
         <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-[400px] order-1 lg:order-2">
-          <img
+          <CloudinaryImage
             src={LAB_TECH_IMAGE}
             alt="Advanced laboratory diagnostic equipment"
+            variant="hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

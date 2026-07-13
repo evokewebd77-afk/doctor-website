@@ -3,6 +3,7 @@ import { ArrowRight, Home } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { HOME_CARE_SERVICES } from '../../data/homeCareData'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 const MOBILE_PREVIEW_COUNT = 6
 
@@ -31,7 +32,7 @@ export default function HomeCareServicesGrid() {
             }`}
           >
             <div className="relative h-[110px] sm:h-[170px] lg:h-[180px] overflow-hidden m-2 sm:m-0 sm:rounded-t-2xl rounded-lg">
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover rounded-lg sm:rounded-t-2xl sm:rounded-b-none" />
+              <CloudinaryImage src={service.image} alt={service.title} variant="card" className="w-full h-full object-cover rounded-lg sm:rounded-t-2xl sm:rounded-b-none" />
               <div className="absolute -bottom-3 left-3 sm:-bottom-4 sm:left-4 z-10 w-9 h-9 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-blue-100">
                 <RealisticIcon src={service.icon} alt={service.title} size="xs" className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>

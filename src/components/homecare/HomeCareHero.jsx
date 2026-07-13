@@ -3,6 +3,7 @@ import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
 import { HOME_CARE_HERO_VIDEO, HOME_CARE_HERO_FEATURES } from '../../data/homeCareData'
 import Header from '../Header'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryVideo from '../media/CloudinaryVideo'
 
 export default function HomeCareHero() {
   return (
@@ -12,16 +13,11 @@ export default function HomeCareHero() {
       <div className="relative w-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px]">
         {/* Full hero video background */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+          <CloudinaryVideo
+            src={HOME_CARE_HERO_VIDEO}
+            className="absolute inset-0 w-full h-full object-center pointer-events-none"
             aria-hidden
-          >
-            <source src={HOME_CARE_HERO_VIDEO} type="video/mp4" />
-          </video>
+          />
         </div>
 
         {/* Content on the left */}

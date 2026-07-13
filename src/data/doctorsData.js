@@ -1,7 +1,10 @@
 import { RI } from './realisticIcons'
 
-export const DOCTORS_HERO_VIDEO =
-  'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782903544/AQNT7hYvftDC_lTT4hZgTGVKC548wdV64ZsKaLoN3cjf0hKitNJtVKffK2dNHkN9kIkOPGoWqNw7dYo3VIJ--ee_zd9ZOt8o_TwcHcS0l5JgHzVOpolLvwFnDU0KGpvc.mp4_btho1b.mp4'
+export const DOCTORS_HERO_BG =
+  'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782905713/ChatGPT_Image_Jul_1_2026_05_04_52_PM_an3tvz.png'
+
+export const DOCTORS_HERO_AVATAR =
+  'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782802173/d4797f1a981d490a87d4b242ede82d97_afgwsr.webm'
 
 export const DOCTORS_LIST = [
   {

@@ -2,6 +2,7 @@ import { ArrowRight, Phone } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
 import { DOCTORS_LIST } from '../../data/doctorsData'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function DoctorsGrid() {
   return (
@@ -22,11 +23,11 @@ export default function DoctorsGrid() {
             className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_24px_rgba(16,42,94,0.08)] overflow-hidden flex flex-col"
           >
             <div className="bg-[#f0f4fa] flex items-end justify-center px-3 pt-4 sm:px-4 sm:pt-5">
-              <img
+              <CloudinaryImage
                 src={doctor.image}
                 alt={doctor.name}
+                variant="portrait"
                 className="w-full h-auto object-contain object-bottom"
-                loading="lazy"
               />
             </div>
 

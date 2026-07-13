@@ -152,7 +152,7 @@ export default function Footer() {
                 <img
                   src={CLINIC_LOGO}
                   alt="Family Cure Clinic"
-                  className="h-20 sm:h-24 lg:h-28 w-auto max-w-[280px] sm:max-w-[320px] object-contain shrink-0 rounded-lg"
+                  className="h-20 sm:h-24 lg:h-28 w-auto object-contain shrink-0"
                 />
               </div>
 

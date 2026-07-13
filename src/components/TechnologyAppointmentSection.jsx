@@ -1,5 +1,6 @@
 import { ArrowRight, Check, Calendar, Clock, ChevronDown } from 'lucide-react'
 import { PAGE_MAX } from '../data/constants'
+import CloudinaryImage from './media/CloudinaryImage'
 
 const TECH_BG =
   'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782809095/ChatGPT_Image_Jun_30_2026_02_12_55_PM_afg8ih.png'
@@ -16,8 +17,8 @@ export default function TechnologyAppointmentSection() {
     <section id="book-appointment" className={`${PAGE_MAX} py-6 sm:py-8 lg:py-10 w-full scroll-mt-20`}>
       <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         <div className="relative min-h-[340px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] rounded-2xl overflow-hidden">
-          <img src={TECH_BG} alt="Advanced medical technology room" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/90 to-white/40 md:bg-gradient-to-r md:from-white md:via-white/85 md:to-white/20 md:w-[72%]" />
+          <CloudinaryImage src={TECH_BG} alt="Advanced medical technology room" variant="hero" className="absolute inset-0 w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/25 md:bg-gradient-to-r md:from-white/55 md:via-white/35 md:to-white/10 md:w-[72%]" />
           <div className="relative z-10 h-full flex flex-col justify-center p-5 sm:p-8 lg:p-9 xl:p-10 max-w-full md:max-w-[90%]">
             <h2 className="font-serif-display text-xl sm:text-2xl lg:text-[1.75rem] xl:text-[2rem] font-bold text-[#102a5e] leading-tight mb-2 sm:mb-3">
               Advanced Technology.

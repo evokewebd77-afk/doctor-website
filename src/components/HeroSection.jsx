@@ -1,140 +1,131 @@
-import {
-  ArrowRight,
-  Clock,
-  ChevronRight,
-} from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { ArrowRight, Calendar } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { HERO_IMAGE, HERO_BG, PAGE_MAX } from '../data/constants'
-import { RI } from '../data/realisticIcons'
+import { HERO_SLIDES, HERO_SLIDE_IMAGE_OPTS, PAGE_MAX } from '../data/constants'
 import Header from './Header'
-import RealisticIcon from './RealisticIcon'
+import CloudinaryImage from './media/CloudinaryImage'
 
-const HELP_ITEMS = [
-  { title: 'Find a Doctor', sub: 'Book an appointment', icon: RI.stethoscope, to: '/doctors' },
-  { title: 'Book a Test', sub: 'Pathology, Radiology & More', icon: RI.lab, to: '/lab-services' },
-  { title: 'Diagnostics & Lab Services', sub: 'Accurate. Reliable. Fast.', icon: RI.microscope, to: '/lab-services' },
-  { title: 'Home Care Services', sub: 'Nursing, Physiotherapy & More', icon: RI.home, to: '/home-care' },
-  { title: 'Emergency Consultation', sub: '24/7 Doctors On Call', icon: RI.ambulance, to: '/services' },
+const SLIDE_INTERVAL_MS = 6000
+
+const HERO_SLIDE_ALTS = [
+  'Family Cure Clinic reception',
+  'Family Cure Clinic doctors team',
+  'Family Cure Clinic patient care',
 ]
 
-function HelpMenu({ className = '', compact = false }) {
-  return (
-    <div
-      className={`bg-white/80 backdrop-blur-xl rounded-[20px] sm:rounded-[22px] shadow-lg border border-white/70 ${
-        compact ? 'p-4' : 'p-3.5 sm:p-4'
-      } ${className}`}
-    >
-      <h3 className={`text-gray-600 font-medium mb-3 px-0.5 ${compact ? 'text-[13px]' : 'text-[13px] sm:text-sm'}`}>
-        How can we help you today?
-      </h3>
-      <div className="space-y-2">
-        {HELP_ITEMS.map((item) => (
-          <Link
-            key={item.title}
-            to={item.to}
-            className="bg-white rounded-xl px-3 py-2.5 flex items-center justify-between cursor-pointer hover:shadow-sm transition-shadow group"
-          >
-            <div className="flex items-center gap-2.5 min-w-0">
-              <RealisticIcon
-                src={item.icon}
-                alt={item.title}
-                size="xs"
-                className={compact ? 'w-[22px] h-[22px]' : 'w-6 h-6'}
-              />
-              <div className="min-w-0">
-                <h4
-                  className={`text-[#102a5e] font-semibold leading-tight ${
-                    compact ? 'text-[12px]' : 'text-[12px] sm:text-sm'
-                  }`}
-                >
-                  {item.title}
-                </h4>
-                <p className={`text-gray-400 leading-tight truncate ${compact ? 'text-[10px]' : 'text-[10px] sm:text-xs'}`}>
-                  {item.sub}
-                </p>
-              </div>
-            </div>
-            <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-gray-300 group-hover:text-blue-500" />
-          </Link>
-        ))}
-      </div>
-      <div className={`mt-3 flex items-center justify-between px-0.5 ${compact ? 'text-[11px]' : 'text-[10px] sm:text-[11px]'}`}>
-        <div className="flex items-center gap-1.5 text-gray-500">
-          <Clock className="w-3 h-3" />
-          <span>24/7 Assistance</span>
-        </div>
-        <div className="flex items-center gap-1.5 text-green-600 font-medium">
-          <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-          <span>Online</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export default function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    if (HERO_SLIDES.length <= 1) return undefined
+
+    const timer = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
+    }, SLIDE_INTERVAL_MS)
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
-    <section className="relative w-full z-10">
-      <div className="absolute inset-0 z-0">
-        <img src={HERO_BG} alt="" className="w-full h-full min-h-[640px] md:min-h-[580px] object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white/60 md:bg-gradient-to-r md:from-white/72 md:via-white/38 md:to-transparent md:w-[58%]" />
+    <section className="relative w-full z-10 bg-[#f8fafe] md:min-h-[560px] lg:min-h-[620px]">
+      {/* Desktop: full background slider */}
+      <div className="absolute inset-0 z-0 hidden md:block">
+        {HERO_SLIDES.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === activeSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+            aria-hidden={index !== activeSlide}
+          >
+            <CloudinaryImage
+              src={src}
+              alt=""
+              aria-hidden
+              variant="hero"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              className={`w-full h-full min-h-[560px] lg:min-h-[620px] ${HERO_SLIDE_IMAGE_OPTS[index]?.desktop ?? 'object-cover object-right'}`}
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-[62%]" />
       </div>
 
       <Header />
 
-      <div className={`relative z-10 ${PAGE_MAX} pt-2 sm:pt-4 pb-4 md:pb-6`}>
-        <div className="flex flex-col md:flex-row md:items-end md:gap-4 lg:gap-6">
-          <div className="md:w-[38%] lg:w-[36%] xl:w-[34%] shrink-0 space-y-4 sm:space-y-5 py-2 md:py-5 md:pb-8 self-center md:self-auto">
-            <p className="text-red-500 font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-[11px] uppercase">
-              Compassionate Care.
-            </p>
-            <h2 className="font-serif-display text-[clamp(1.55rem,2.5vw,2.75rem)] font-bold text-[#102a5e] leading-[1.2]">
-              Compassionate Family Healthcare for Every Generation
-            </h2>
-            <p className="text-[#4a5568] text-[12px] sm:text-[13px] md:text-sm leading-[1.65] max-w-[28rem]">
-              Integrated outpatient care, diagnostics, expert doctors, women&apos;s health, child care & home healthcare — all
-              under one roof, for your family&apos;s complete well-being.
-            </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 pt-1">
-              <button
-                type="button"
-                className="flex items-center justify-center gap-2 bg-[#102a5e] text-white px-5 sm:px-6 py-2.5 rounded-full font-semibold hover:bg-blue-900 transition-colors text-[11px] tracking-wide w-full sm:w-auto"
+      <div className={`relative z-10 ${PAGE_MAX} pt-[5rem] sm:pt-[5.75rem] md:pt-8 lg:pt-10 pb-8 sm:pb-10 md:pb-12 lg:pb-14`}>
+        <div className="max-w-xl lg:max-w-[36rem] xl:max-w-[40rem] space-y-4 sm:space-y-5 py-2 lg:py-6">
+          <p className="text-red-600 font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-[11px] uppercase">
+            Community Care. Family First.
+          </p>
+          <h2 className="font-serif-display text-[clamp(1.65rem,4vw,2.85rem)] font-bold text-[#0a1f47] leading-[1.15]">
+            Your Trusted Family Clinic in Tricity
+          </h2>
+          <p className="text-[#2d3748] text-[13px] sm:text-sm md:text-[15px] leading-[1.7] max-w-2xl">
+            Complete healthcare for children, women, adults, and senior citizens—all under one roof.
+          </p>
+          <p className="text-gray-500 text-[12px] sm:text-[13px] md:text-sm leading-[1.7] max-w-2xl">
+            Providing doctor consultations, diagnostics, vaccinations, women&apos;s healthcare, home healthcare, and
+            teleconsultation services across Chandigarh, Mohali, and Panchkula.
+          </p>
+
+          {/* Mobile: slide image shown separately (not as bg) */}
+          <div
+            className={`md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0_8px_28px_rgba(16,42,94,0.12)] border border-gray-100 bg-white ${
+              HERO_SLIDE_IMAGE_OPTS[activeSlide]?.mobileAspect ?? 'aspect-[4/3] sm:aspect-[16/11]'
+            }`}
+          >
+            {HERO_SLIDES.map((src, index) => (
+              <div
+                key={src}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === activeSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+                aria-hidden={index !== activeSlide}
               >
-                EXPLORE SERVICES
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-              <button
-                type="button"
-                className="flex items-center justify-center gap-2 bg-white text-[#102a5e] border border-[#102a5e]/20 px-5 sm:px-6 py-2.5 rounded-full font-semibold hover:border-[#102a5e]/40 transition-colors text-[11px] tracking-wide w-full sm:w-auto"
-              >
-                BOOK APPOINTMENT
-                <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
-              </button>
-            </div>
+                <CloudinaryImage
+                  src={src}
+                  alt={HERO_SLIDE_ALTS[index] ?? 'Family Cure Clinic'}
+                  variant="hero"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  className={`w-full h-full ${HERO_SLIDE_IMAGE_OPTS[index]?.mobile ?? 'object-cover object-right'}`}
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="md:hidden flex flex-col items-center gap-5 mt-4">
-            <HelpMenu className="w-full max-w-md" />
-            <img
-              src={HERO_IMAGE}
-              alt="Doctor with family at Family Cure Clinic"
-              className="h-[220px] sm:h-[280px] w-auto max-w-full object-contain object-bottom drop-shadow-md"
-            />
+          <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 pt-1">
+            <Link
+              to="/contact"
+              className="flex items-center justify-center gap-2 bg-[#102a5e] text-white px-5 sm:px-6 py-3 rounded-full font-semibold hover:bg-blue-900 transition-colors text-[11px] sm:text-xs tracking-wide w-full sm:w-auto shadow-[0_4px_20px_rgba(16,42,94,0.25)]"
+            >
+              Book Appointment
+              <Calendar className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              to="/services"
+              className="flex items-center justify-center gap-2 bg-white text-[#102a5e] border-2 border-[#102a5e]/25 px-5 sm:px-6 py-3 rounded-full font-semibold hover:border-[#102a5e]/50 hover:bg-white transition-colors text-[11px] sm:text-xs tracking-wide w-full sm:w-auto shadow-md"
+            >
+              Explore Services
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
-          <div className="hidden md:flex flex-1 items-end justify-between gap-3 lg:gap-5 min-h-[420px] lg:min-h-[460px] min-w-0 relative z-[5]">
-            <div className="shrink-0 w-[220px] lg:w-[250px] xl:w-[272px] self-center mb-6 lg:mb-10 z-20">
-              <HelpMenu compact className="bg-white/70 shadow-[0_8px_32px_rgba(0,0,0,0.1)]" />
+          {HERO_SLIDES.length > 1 && (
+            <div className="flex items-center gap-2 pt-2">
+              {HERO_SLIDES.map((src, index) => (
+                <button
+                  key={src}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === activeSlide ? 'w-6 bg-[#102a5e]' : 'w-2 bg-[#102a5e]/30 hover:bg-[#102a5e]/50'
+                  }`}
+                  aria-label={`Show hero slide ${index + 1}`}
+                />
+              ))}
             </div>
-
-            <div className="flex-1 flex justify-end items-end min-w-0 h-full pb-0">
-              <img
-                src={HERO_IMAGE}
-                alt="Doctor with family at Family Cure Clinic"
-                className="h-[min(440px,50vh)] lg:h-[min(480px,54vh)] xl:h-[min(520px,56vh)] w-auto max-w-full object-contain object-bottom drop-shadow-[0_10px_24px_rgba(16,42,94,0.1)]"
-              />
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

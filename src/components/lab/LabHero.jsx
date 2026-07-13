@@ -2,6 +2,7 @@ import { PAGE_MAX } from '../../data/constants'
 import { LAB_HERO_VIDEO, LAB_HERO_FEATURES, LAB_STATS } from '../../data/labServicesData'
 import Header from '../Header'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryVideo from '../media/CloudinaryVideo'
 
 export default function LabHero() {
   return (
@@ -11,17 +12,12 @@ export default function LabHero() {
       <div className="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[540px]">
         {/* Video — right side only */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-[70%_center] sm:object-right pointer-events-none"
+          <CloudinaryVideo
+            src={LAB_HERO_VIDEO}
+            className="absolute inset-0 w-full h-full object-[70%_center] sm:object-right pointer-events-none"
+            objectPosition="70% center"
             aria-hidden
-          >
-            <source src={LAB_HERO_VIDEO} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/30 sm:from-white sm:via-white/85 sm:to-transparent lg:via-white/70" />
+          />
         </div>
 
         {/* Text content */}

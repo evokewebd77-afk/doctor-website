@@ -1,5 +1,6 @@
 import { CONTACT_INFO_ROWS } from '../../data/contactData'
 import RealisticIcon from './RealisticIcon'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function ContactInfoPanel() {
   return (
@@ -21,11 +22,11 @@ export default function ContactInfoPanel() {
             ))}
           </div>
           {row.thumbnail && (
-            <img
+            <CloudinaryImage
               src={row.thumbnail}
               alt="Clinic building"
+              variant="card"
               className="w-16 h-11 sm:w-20 sm:h-14 rounded-lg object-cover shrink-0 border border-gray-100"
-              loading="lazy"
             />
           )}
           {row.badge && (

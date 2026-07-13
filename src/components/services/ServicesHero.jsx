@@ -3,6 +3,7 @@ import { PAGE_MAX } from '../../data/constants'
 import { SERVICES_HERO_IMAGE, SERVICES_HERO_FEATURES } from '../../data/servicesData'
 import Header from '../Header'
 import RealisticIcon from '../RealisticIcon'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function ServicesHero() {
   return (
@@ -11,13 +12,13 @@ export default function ServicesHero() {
 
       <div className="relative w-full min-h-[480px] sm:min-h-[540px] lg:min-h-[580px]">
         <div className="absolute inset-0 overflow-hidden">
-          <img
+          <CloudinaryImage
             src={SERVICES_HERO_IMAGE}
             alt=""
             aria-hidden
+            variant="hero"
             className="w-full h-full object-cover object-center sm:object-[80%_center] lg:object-right pointer-events-none select-none"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/50 sm:from-white/80 sm:via-white/50 sm:to-transparent lg:from-transparent lg:via-transparent" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] pt-5 sm:pt-10 lg:pt-12 pb-28 sm:pb-36`}>

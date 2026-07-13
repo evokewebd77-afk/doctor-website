@@ -1,5 +1,6 @@
 import { PAGE_MAX } from '../../data/constants'
 import { ABOUT_DOCTORS } from '../../data/aboutData'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function AboutTeam() {
   return (
@@ -23,11 +24,11 @@ export default function AboutTeam() {
             className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_24px_rgba(16,42,94,0.08)] overflow-hidden text-center"
           >
             <div className="aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-[#f0f4fa]">
-              <img
+              <CloudinaryImage
                 src={doctor.image}
                 alt={doctor.name}
+                variant="portrait"
                 className="w-full h-full object-cover object-top"
-                loading="lazy"
               />
             </div>
             <div className="px-4 py-5 sm:py-6">
