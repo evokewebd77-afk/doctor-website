@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { ArrowRight, Home } from 'lucide-react'
-import { PAGE_MAX } from '../../data/constants'
+import { useState, useEffect } from 'react'
+import { ArrowRight, Home, X, CheckCircle2, Phone } from 'lucide-react'
+import { PAGE_MAX, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from '../../data/constants'
 import { HOME_CARE_SERVICES } from '../../data/homeCareData'
 import RealisticIcon from '../RealisticIcon'
 import CloudinaryImage from '../media/CloudinaryImage'
@@ -9,6 +9,19 @@ const MOBILE_PREVIEW_COUNT = 6
 
 export default function HomeCareServicesGrid() {
   const [showAll, setShowAll] = useState(false)
+  const [selected, setSelected] = useState(null)
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selected !== null) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [selected])
+
+  const close = () => setSelected(null)
 
   return (
     <section className={`${PAGE_MAX} pt-16 sm:pt-24 lg:pt-28 pb-4 sm:pb-8 w-full`}>
@@ -25,32 +38,34 @@ export default function HomeCareServicesGrid() {
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 lg:gap-7">
         {HOME_CARE_SERVICES.map((service, index) => (
-          <div
+          <button
+            type="button"
             key={service.title}
-            className={`relative bg-white rounded-xl sm:rounded-2xl shadow-[0_2px_16px_rgba(16,42,94,0.07)] border border-gray-100 ${
+            onClick={() => setSelected(index)}
+            className={`relative bg-white rounded-xl sm:rounded-2xl shadow-[0_2px_16px_rgba(16,42,94,0.07)] border border-gray-100 hover:shadow-[0_8px_28px_rgba(16,42,94,0.1)] hover:border-blue-200 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group text-left ${
               !showAll && index >= MOBILE_PREVIEW_COUNT ? 'hidden lg:block' : ''
             }`}
           >
             <div className="relative h-[110px] sm:h-[170px] lg:h-[180px] overflow-hidden m-2 sm:m-0 sm:rounded-t-2xl rounded-lg">
-              <CloudinaryImage src={service.image} alt={service.title} variant="card" className="w-full h-full object-cover rounded-lg sm:rounded-t-2xl sm:rounded-b-none" />
+              <CloudinaryImage src={service.image} alt={service.title} variant="card" className="w-full h-full object-cover rounded-lg sm:rounded-t-2xl sm:rounded-b-none transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute -bottom-3 left-3 sm:-bottom-4 sm:left-4 z-10 w-9 h-9 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-blue-100">
                 <RealisticIcon src={service.icon} alt={service.title} size="xs" className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
             </div>
 
-            <div className="px-2.5 sm:px-5 pt-6 sm:pt-9 pb-3 sm:pb-5 text-left">
+            <div className="px-2.5 sm:px-5 pt-6 sm:pt-9 pb-3 sm:pb-5">
               <h3 className="font-bold text-[#102a5e] text-[11px] sm:text-[15px] mb-1 leading-snug line-clamp-2">
                 {service.title}
               </h3>
               <p className="text-gray-500 text-[9px] sm:text-[12px] leading-relaxed mb-2 sm:mb-4 line-clamp-2 sm:line-clamp-3 sm:min-h-[52px]">
                 {service.desc}
               </p>
-              <a href="#" className="text-[9px] sm:text-[12px] font-semibold text-blue-600 inline-flex items-center gap-0.5 hover:underline">
+              <span className="text-[9px] sm:text-[12px] font-semibold text-blue-600 inline-flex items-center gap-0.5 group-hover:underline">
                 Learn More
-                <ArrowRight className="w-3 h-3" />
-              </a>
+                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -66,6 +81,76 @@ export default function HomeCareServicesGrid() {
           </button>
         </div>
       )}
+
+      {/* Modal Popup */}
+      {selected !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          onClick={close}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+          {/* Modal content */}
+          <div
+            className="relative bg-white rounded-2xl sm:rounded-3xl shadow-[0_20px_60px_rgba(16,42,94,0.25)] w-full max-w-lg max-h-[85vh] overflow-y-auto animate-[modalIn_0.25s_ease-out]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="sticky top-0 bg-white z-10 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 border-b border-gray-100 rounded-t-2xl sm:rounded-t-3xl">
+              <button
+                type="button"
+                onClick={close}
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-4 h-4 text-gray-600" />
+              </button>
+
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                  <RealisticIcon src={HOME_CARE_SERVICES[selected].icon} alt={HOME_CARE_SERVICES[selected].title} size="sm" className="w-9 h-9 sm:w-10 sm:h-10" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#102a5e] text-lg sm:text-xl">{HOME_CARE_SERVICES[selected].title}</h3>
+                  <p className="text-gray-500 text-xs sm:text-sm mt-1 leading-relaxed">{HOME_CARE_SERVICES[selected].desc}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Details list */}
+            <div className="px-6 sm:px-8 py-5 sm:py-6">
+              <h4 className="text-[#102a5e] font-bold text-sm sm:text-[15px] mb-4">What's Included</h4>
+              <ul className="space-y-2.5">
+                {HOME_CARE_SERVICES[selected].details?.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
+                    <span className="text-gray-700 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Footer */}
+            <div className="sticky bottom-0 bg-white px-6 sm:px-8 py-4 sm:py-5 border-t border-gray-100 rounded-b-2xl sm:rounded-b-3xl">
+              <a
+                href={`tel:${CLINIC_PHONE}`}
+                className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm"
+              >
+                <Phone className="w-4 h-4" />
+                Book Appointment — {CLINIC_PHONE_DISPLAY}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes modalIn {
+          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+      `}</style>
     </section>
   )
 }
