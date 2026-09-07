@@ -17,8 +17,10 @@ export default function ServicesHero() {
             alt=""
             aria-hidden
             variant="hero"
-            className="w-full h-full object-cover object-center sm:object-[80%_center] lg:object-right pointer-events-none select-none"
+            className="w-full h-full object-cover object-[80%_center] sm:object-[80%_center] lg:object-right pointer-events-none select-none"
           />
+          {/* Gradient backdrop for text contrast and image visibility on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-full sm:w-[85%] md:w-[75%]" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] pt-5 sm:pt-10 lg:pt-12 pb-28 sm:pb-36`}>
