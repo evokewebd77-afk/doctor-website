@@ -38,10 +38,10 @@ export default function TechnologyAppointmentSection() {
               {TECH_FEATURES.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-white/90 backdrop-blur-xs border border-blue-100/80 shadow-2xs text-[#0a1f47] font-semibold text-[13px] sm:text-sm"
+                  className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-[10px] bg-white/90 backdrop-blur-xs border border-blue-100/80 shadow-2xs text-[#0a1f47] font-semibold text-[12px] sm:text-[13px]"
                 >
-                  <span className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-2xs">
-                    <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                  <span className="w-4 h-4 sm:w-[18px] sm:h-[18px] rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-2xs">
+                    <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" strokeWidth={3} />
                   </span>
                   <span>{feature}</span>
                 </li>
