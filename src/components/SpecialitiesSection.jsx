@@ -18,6 +18,7 @@ const SPECIALITIES = [
     desc: "Expert women's health care from pregnancy to menopause with compassionate support.",
     icon: RI.woman,
     image: '/obgyn.jpg',
+    imagePosition: 'object-[center_25%]',
     to: '/services/obstetrics-gynaecology',
   },
   {
@@ -61,7 +62,7 @@ export default function SpecialitiesSection() {
                 src={item.image}
                 alt={item.title}
                 variant="card"
-                className={`w-full h-full object-cover object-center ${
+                className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} ${
                   item.imageZoom ? 'scale-[1.18] origin-center' : ''
                 }`}
               />
