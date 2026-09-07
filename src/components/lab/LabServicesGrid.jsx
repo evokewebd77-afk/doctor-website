@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, X, CheckCircle2 } from 'lucide-react'
-import { PAGE_MAX } from '../../data/constants'
+import { ArrowRight, X, CheckCircle2, Phone } from 'lucide-react'
+import { PAGE_MAX, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from '../../data/constants'
 import { LAB_SERVICES } from '../../data/labServicesData'
 import RealisticIcon from '../RealisticIcon'
 
@@ -108,11 +108,11 @@ export default function LabServicesGrid() {
             {/* Footer */}
             <div className="sticky bottom-0 bg-white px-6 sm:px-8 py-4 sm:py-5 border-t border-gray-100 rounded-b-2xl sm:rounded-b-3xl">
               <a
-                href="tel:+911234567890"
+                href={`tel:${CLINIC_PHONE}`}
                 className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm"
               >
-                Book This Test
-                <ArrowRight className="w-4 h-4" />
+                <Phone className="w-4 h-4" />
+                Book Appointment — {CLINIC_PHONE_DISPLAY}
               </a>
             </div>
           </div>
