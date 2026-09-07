@@ -3,6 +3,7 @@ import {
   ChevronRight,
   MapPin,
   Phone,
+  PhoneCall,
   Mail,
   Clock,
   ShieldCheck,
@@ -15,6 +16,8 @@ import {
   CLINIC_PHONE,
   CLINIC_PHONE_DISPLAY,
   CLINIC_EMAIL,
+  HOME_EMERGENCY_PHONE,
+  HOME_EMERGENCY_PHONE_DISPLAY,
   CLINIC_WHATSAPP_URL,
   CLINIC_INSTAGRAM_URL,
   CLINIC_MAPS_URL,
@@ -236,6 +239,26 @@ export default function Footer() {
                   <div className="leading-snug">
                     <p className="font-semibold text-white">Mon – Sat: 9:00 AM – 8:00 PM</p>
                     <p className="text-blue-200/70 text-[11px] mt-0.5">Sunday: 10:00 AM – 2:00 PM</p>
+                  </div>
+                </div>
+
+                {/* Emergency / 24x7 Support */}
+                <div className="pt-2.5 border-t border-white/15 flex items-start gap-2.5 text-blue-100/80">
+                  <div className="w-4 h-4 rounded-full bg-red-500/20 flex items-center justify-center shrink-0 mt-0.5 border border-red-400/30">
+                    <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+                  </div>
+                  <div className="leading-snug">
+                    <p className="font-bold text-red-300 text-xs uppercase tracking-wide">Emergency / 24x7 Support</p>
+                    <p className="text-blue-100/75 text-[11px] mt-0.5 leading-relaxed">
+                      For medical emergencies, we're available 24x7 for immediate assistance.
+                    </p>
+                    <a
+                      href={`tel:${HOME_EMERGENCY_PHONE}`}
+                      className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 border border-red-400/30 text-red-200 hover:text-white text-xs font-semibold transition-all hover:scale-105 active:scale-95 shadow-xs"
+                    >
+                      <PhoneCall className="w-3 h-3 text-red-400" />
+                      <span>{HOME_EMERGENCY_PHONE_DISPLAY}</span>
+                    </a>
                   </div>
                 </div>
               </div>
