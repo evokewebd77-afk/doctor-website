@@ -10,10 +10,10 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <AboutMissionVision />
-      <AboutStatsBar />
       <AboutWhyChoose />
       <AboutTeam />
       <AboutCTA />
+      <AboutStatsBar />
     </>
   )
 }
