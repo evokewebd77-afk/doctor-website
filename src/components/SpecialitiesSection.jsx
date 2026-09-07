@@ -17,8 +17,7 @@ const SPECIALITIES = [
     title: 'Obstetrics & Gynaecology',
     desc: "Expert women's health care from pregnancy to menopause with compassionate support.",
     icon: RI.woman,
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782803293/obstetrics_gynaecology_separate_tpysnq.png',
-    imageZoom: true,
+    image: '/obgyn.jpg',
     to: '/services/obstetrics-gynaecology',
   },
   {
