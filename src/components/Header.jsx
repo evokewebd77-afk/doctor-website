@@ -53,15 +53,17 @@ export default function Header() {
             className="flex items-center shrink-0 group py-0.5"
             aria-label="Family Cure Clinic Home"
           >
-            <img
-              src={CLINIC_LOGO}
-              alt="Family Cure Clinic"
-              className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-                scrolled
-                  ? 'h-9 sm:h-10 md:h-11 lg:h-12 max-w-[140px] sm:max-w-[170px] md:max-w-[200px]'
-                  : 'h-10 sm:h-11 md:h-13 lg:h-14 max-w-[150px] sm:max-w-[190px] md:max-w-[220px]'
-              }`}
-            />
+            <div className={`flex items-center rounded-xl border border-blue-100 shadow-sm bg-white px-1.5 py-0.5 transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200`}>
+              <img
+                src={CLINIC_LOGO}
+                alt="Family Cure Clinic"
+                className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+                  scrolled
+                    ? 'h-9 sm:h-10 md:h-11 lg:h-12 max-w-[130px] sm:max-w-[160px] md:max-w-[190px]'
+                    : 'h-10 sm:h-11 md:h-13 lg:h-14 max-w-[140px] sm:max-w-[180px] md:max-w-[210px]'
+                }`}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
