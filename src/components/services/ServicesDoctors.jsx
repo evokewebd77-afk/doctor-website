@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronLeft, ChevronRight, Star } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { SERVICES_DOCTORS } from '../../data/servicesData'
@@ -19,7 +20,7 @@ export default function ServicesDoctors() {
 
       {/* Mobile: doctor carousel */}
       <div className="md:hidden">
-        <div className="flex items-center gap-3 bg-white rounded-2xl p-3.5 shadow-[0_2px_16px_rgba(16,42,94,0.07)] border border-gray-100">
+        <Link to="/doctors" className="flex items-center gap-3 bg-white rounded-2xl p-3.5 shadow-[0_2px_16px_rgba(16,42,94,0.07)] border border-gray-100 hover:shadow-[0_4px_20px_rgba(37,99,235,0.08)] hover:border-blue-200 transition-all">
           <CloudinaryImage
             src={SERVICES_DOCTORS[activeIndex].image}
             alt={SERVICES_DOCTORS[activeIndex].name}
@@ -38,21 +39,20 @@ export default function ServicesDoctors() {
               </div>
               <span className="text-blue-600 text-[10px] font-semibold">{SERVICES_DOCTORS[activeIndex].specialty}</span>
             </div>
-            <button
-              type="button"
+            <span
               className="mt-1.5 text-[10px] font-bold text-blue-600 flex items-center gap-1 hover:underline uppercase tracking-wide"
             >
               View Profile
               <ArrowRight className="w-3 h-3" />
-            </button>
+            </span>
           </div>
-        </div>
+        </Link>
 
         <div className="flex items-center justify-center gap-4 pt-4">
           <button
             type="button"
             onClick={prev}
-            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#102a5e] bg-white shadow-sm"
+            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#102a5e] bg-white shadow-sm hover:bg-gray-50 transition-colors"
             aria-label="Previous doctor"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -71,7 +71,7 @@ export default function ServicesDoctors() {
           <button
             type="button"
             onClick={next}
-            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#102a5e] bg-white shadow-sm"
+            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#102a5e] bg-white shadow-sm hover:bg-gray-50 transition-colors"
             aria-label="Next doctor"
           >
             <ChevronRight className="w-4 h-4" />
@@ -82,26 +82,26 @@ export default function ServicesDoctors() {
       {/* Desktop: centered portrait cards */}
       <div className="hidden md:flex flex-wrap justify-center gap-5 sm:gap-6 lg:gap-8">
         {SERVICES_DOCTORS.map((doctor) => (
-          <div
+          <Link
+            to="/doctors"
             key={doctor.name}
-            className="w-[260px] lg:w-[280px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-gray-100"
+            className="block w-[260px] lg:w-[280px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(37,99,235,0.12)] hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 group"
           >
             <div className="h-[220px] overflow-hidden bg-gray-50">
-              <CloudinaryImage src={doctor.image} alt={doctor.name} variant="portrait" className="w-full h-full object-cover object-top" />
+              <CloudinaryImage src={doctor.image} alt={doctor.name} variant="portrait" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div className="p-5 text-center">
               <h3 className="font-bold text-[#102a5e] text-[15px]">{doctor.name}</h3>
               <p className="text-[#c2410c] text-[10px] font-medium mt-1">{doctor.qualifications}</p>
               <p className="text-blue-600 text-xs font-semibold mt-1">{doctor.specialty}</p>
-              <button
-                type="button"
-                className="mt-3 text-[11px] font-bold text-blue-600 flex items-center gap-1 mx-auto hover:underline uppercase tracking-wide"
+              <span
+                className="mt-3 text-[11px] font-bold text-blue-600 flex items-center justify-center gap-1 mx-auto group-hover:underline uppercase tracking-wide"
               >
                 View Profile
-                <ArrowRight className="w-3 h-3" />
-              </button>
+                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+              </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
