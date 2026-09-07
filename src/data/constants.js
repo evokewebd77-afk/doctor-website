@@ -1,7 +1,8 @@
 export const HERO_BG =
   'https://res.cloudinary.com/dwnnakrrh/image/upload/v1783141781/ChatGPT_Image_Jul_4_2026_10_38_42_AM_xsxik6.png'
 
-export const HERO_BG_2 = '/slide2.png'
+export const HERO_BG_2 =
+  'https://res.cloudinary.com/j6lurplk/image/upload/v1783399180/6f6555e0-521c-496b-9534-82d2f7fbf7f4_unz9ot.png'
 
 export const HERO_BG_3 =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783399636/ChatGPT_Image_Jul_7_2026_10_16_50_AM_cjvwn9.png'
@@ -11,13 +12,13 @@ export const HERO_BG_4 =
 
 export const HERO_BG_5 = '/ds.png'
 
-export const HERO_SLIDES = [HERO_BG, HERO_BG_2, HERO_BG_3, HERO_BG_4, HERO_BG_5]
+export const HERO_SLIDES = [HERO_BG, HERO_BG_3, HERO_BG_2, HERO_BG_4, HERO_BG_5]
 
-/** Per-slide image fit — slide 3 is a wide banner; avoid cropping the top */
+/** Per-slide image fit — wide banners avoid cropping the top */
 export const HERO_SLIDE_IMAGE_OPTS = [
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right scale-[1.45] sm:scale-[1.3] origin-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-center', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[16/11] sm:aspect-[16/10]' },
 ]
