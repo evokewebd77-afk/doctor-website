@@ -32,7 +32,7 @@ export const MEDICAL_SERVICES = [
     title: 'Pediatrics & Neonatology',
     desc: 'Expert newborn, infant, child & adolescent care with compassionate treatment.',
     icon: RI.baby,
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782882906/ChatGPT_Image_Jul_1_2026_10_43_01_AM_3_o3gzig.png',
+    image: '/child.png',
   },
   {
     title: 'Diagnostics & Lab Services',
