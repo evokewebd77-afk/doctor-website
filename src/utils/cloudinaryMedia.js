@@ -13,7 +13,7 @@ export const TRANSFORMS = {
   imageHero: 'f_auto,q_auto:best,dpr_auto,w_2560',
   imageCard: 'f_auto,q_auto:good,dpr_auto,w_960',
   imagePortrait: 'f_auto,q_auto:best,dpr_auto,w_800',
-  videoHero: 'q_auto:best,vc_auto',
+  videoHero: 'q_auto:best,w_2560,c_limit',
   videoAvatar: 'q_auto:best,vc_auto,w_1080',
 }
 
