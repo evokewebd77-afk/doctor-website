@@ -1,7 +1,7 @@
 import { RI } from './realisticIcons'
 
-export const LAB_HERO_VIDEO =
-  'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782886793/AQPUNmIBE8Q0pp8mT0_jTc2FiwIUaFkQdRfX0lWm_mSWqGY9SsrXSJY3B1rZeJrNNjgmPlrN1uPUel5GTwz7YXMRvLk-mn7eFw_XZChwzRLm3YVBd4c-WkFpDyvdKeL0.mp4_ksbjtz.mp4'
+export const LAB_HERO_IMAGE =
+  'https://res.cloudinary.com/drm8wdb7m/image/upload/f_auto,q_90,dpr_auto,w_3200,c_limit/v1784780779/ChatGPT_Image_Jul_23_2026_09_55_54_AM_e1nbgz.png'
 
 export const LAB_TECH_IMAGE =
   'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782887401/ChatGPT_Image_Jul_1_2026_11_59_37_AM_ecgrqh.png'
