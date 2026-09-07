@@ -34,7 +34,7 @@ export default function MedicalServicesGrid() {
             }`}
           >
             <div className="relative h-[100px] sm:h-[165px] lg:h-[175px] overflow-hidden m-2 sm:m-0 sm:rounded-t-2xl rounded-lg">
-              <CloudinaryImage src={service.image} alt={service.title} variant="card" className="w-full h-full object-cover rounded-lg sm:rounded-none" />
+              <CloudinaryImage src={service.image} alt={service.title} variant="card" className={`w-full h-full object-cover rounded-lg sm:rounded-none ${service.imagePosition || 'object-center'}`} />
               <div className="absolute -bottom-2.5 left-1.5 sm:-bottom-4 sm:left-3 lg:left-1/2 lg:-translate-x-1/2 z-10 w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-blue-100">
                 <RealisticIcon src={service.icon} alt={service.title} size="xs" className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>

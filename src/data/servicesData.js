@@ -25,7 +25,8 @@ export const MEDICAL_SERVICES = [
     title: 'Obstetrics & Gynecology',
     desc: "Complete women's healthcare including pregnancy care, maternal health & fertility.",
     icon: RI.woman,
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782882926/ChatGPT_Image_Jul_1_2026_10_42_59_AM_2_ff6c6m.png',
+    image: '/obgyn.jpg',
+    imagePosition: 'object-[center_25%]',
   },
   {
     title: 'Pediatrics & Neonatology',
