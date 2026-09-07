@@ -19,12 +19,14 @@ export default function ServicesHero() {
             variant="hero"
             className="w-full h-full object-cover object-[80%_top] sm:object-[80%_top] lg:object-right-top pointer-events-none select-none"
           />
-          {/* Gradient backdrop for desktop */}
+          {/* Mobile gradient (top-down) for text contrast */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white via-white/90 to-transparent h-[90%] sm:h-[80%] w-full" />
+          {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] pt-5 sm:pt-10 lg:pt-12 pb-28 sm:pb-36`}>
-          <div className="w-full lg:max-w-[44%] space-y-3.5 sm:space-y-5 bg-white/85 sm:bg-white/75 md:bg-transparent p-5 sm:p-7 md:p-0 rounded-2xl backdrop-blur-md md:backdrop-blur-none shadow-[0_4px_24px_rgba(16,42,94,0.08)] md:shadow-none border border-white/60 md:border-transparent mt-4 sm:mt-0">
+          <div className="w-full lg:max-w-[44%] space-y-3.5 sm:space-y-5">
             <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] uppercase px-3.5 py-1 rounded-full">
               Our Services
             </span>
