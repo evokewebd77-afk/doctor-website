@@ -11,7 +11,7 @@ export default function MedicalServicesGrid() {
   const [showAll, setShowAll] = useState(false)
 
   return (
-    <section className={`${PAGE_MAX} pt-16 sm:pt-24 lg:pt-28 pb-4 sm:pb-8 w-full`}>
+    <section id="medical-services" className={`${PAGE_MAX} pt-16 sm:pt-24 lg:pt-28 pb-4 sm:pb-8 w-full scroll-mt-24`}>
       <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-10 px-1">
         <p className="text-blue-500 font-bold tracking-[0.2em] text-[10px] uppercase mb-2">
           What We Offer

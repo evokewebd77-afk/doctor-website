@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ArrowRight, Calendar } from 'lucide-react'
 import { PAGE_MAX } from '../../data/constants'
 import { SERVICES_HERO_IMAGE, SERVICES_HERO_FEATURES } from '../../data/servicesData'
@@ -42,20 +43,20 @@ export default function ServicesHero() {
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-3 pt-0.5">
-              <button
-                type="button"
+              <a
+                href="#medical-services"
                 className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto"
               >
                 Explore Services
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                type="button"
+              </a>
+              <Link
+                to="/contact"
                 className="flex items-center justify-center gap-2 bg-white text-blue-600 border-2 border-blue-600 px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"
               >
                 <Calendar className="w-4 h-4" />
                 Book Appointment
-              </button>
+              </Link>
             </div>
           </div>
         </div>
