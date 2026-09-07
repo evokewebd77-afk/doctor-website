@@ -56,7 +56,7 @@ export const MEDICAL_SERVICES = [
     title: 'Dermatology',
     desc: 'Diagnosis and treatment for skin, hair, nail disorders & skincare solutions.',
     icon: RI.sparkles,
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782882907/ChatGPT_Image_Jul_1_2026_10_43_02_AM_7_gsmkps.png',
+    image: '/derma.png',
   },
   {
     title: 'Health Packages',
