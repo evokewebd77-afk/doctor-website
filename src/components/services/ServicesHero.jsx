@@ -17,7 +17,7 @@ export default function ServicesHero() {
             alt=""
             aria-hidden
             variant="hero"
-            className="w-full h-full object-cover object-[80%_center] sm:object-[80%_center] lg:object-right pointer-events-none select-none"
+            className="w-full h-full object-cover object-[80%_top] sm:object-[80%_top] lg:object-right-top pointer-events-none select-none"
           />
           {/* Gradient backdrop for desktop */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
