@@ -10,22 +10,17 @@ export const HERO_BG_3 =
 export const HERO_BG_4 =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783923697/2fd7a7fc-ba25-4c63-94fa-d0718ac5e8f5_ewdjih.png'
 
-export const HERO_BG_5 =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783924327/ChatGPT_Image_Jul_13_2026_11_56_45_AM_wx4ml5.png'
+export const HERO_BG_5 = '/ds.png'
 
-export const HERO_BG_6 =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783924328/ChatGPT_Image_Jul_13_2026_12_01_12_PM_k2lfyv.png'
-
-export const HERO_SLIDES = [HERO_BG, HERO_BG_2, HERO_BG_3, HERO_BG_4, HERO_BG_5, HERO_BG_6]
+export const HERO_SLIDES = [HERO_BG, HERO_BG_2, HERO_BG_3, HERO_BG_4, HERO_BG_5]
 
 /** Per-slide image fit — slide 3 is a wide banner; avoid cropping the top */
 export const HERO_SLIDE_IMAGE_OPTS = [
-  { desktop: 'object-cover object-[75%_center] lg:object-right', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[75%_center] lg:object-right', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[right_top] lg:object-right', mobile: 'object-cover object-right scale-[1.45] sm:scale-[1.3] origin-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-center lg:object-right', mobile: 'object-cover object-center', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[75%_center] lg:object-right', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[75%_center] lg:object-right', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right scale-[1.45] sm:scale-[1.3] origin-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-center', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[16/11] sm:aspect-[16/10]' },
 ]
 
 export const FAMILY_IMG =
@@ -91,6 +86,7 @@ export const CLINIC_MAPS_URL = `https://www.google.com/maps/place/Family+cure+cl
 
 export const CLINIC_GOOGLE_REVIEWS_URL = `https://www.google.com/maps/place/Family+cure+clinic/@30.6291189,76.7820431,17z/data=!4m8!3m7!1s0x390feb6615e82cb1:0xf73b87b7b9670a70!8m2!3d30.6291189!4d76.7820431!9m1!1b1!16s%2Fg%2F11pzr0h60w`
 export const CLINIC_WHATSAPP_URL = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent('Hello Family Cure Clinic, I would like to book an appointment.')}`
+export const CLINIC_INSTAGRAM_URL = 'https://www.instagram.com/family_cure_clinic/'
 export const CLINIC_MAPS_EMBED_URL = `https://www.google.com/maps?q=${CLINIC_LAT},${CLINIC_LNG}&z=17&output=embed`
 
 export const CLINIC_EMAIL = 'info@familycureclinic.com'

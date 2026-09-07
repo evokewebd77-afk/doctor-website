@@ -1,0 +1,110 @@
+{
+  "name": "Family Cure Clinic — Booking Confirm Flow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "family-cure-booking",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-booking",
+      "name": "Webhook Booking",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "family-cure-booking"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"message\": \"Thank you for booking! Your request has been sent for confirmation. You will receive a message on your number once it is confirmed.\" } }}",
+        "options": {}
+      },
+      "id": "respond-thankyou",
+      "name": "Respond Thank You",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [260, 0]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": { "__rl": true, "mode": "id", "value": "YOUR_GOOGLE_SHEET_ID" },
+        "sheetName": { "__rl": true, "mode": "name", "value": "Bookings" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $json.sheets.timestamp }}",
+            "Full Name": "={{ $json.sheets.fullName }}",
+            "Phone": "={{ $json.sheets.phone }}",
+            "Email": "={{ $json.sheets.email }}",
+            "Department": "={{ $json.sheets.department }}",
+            "Doctor": "={{ $json.sheets.doctor }}",
+            "Date": "={{ $json.sheets.date }}",
+            "Time": "={{ $json.sheets.time }}",
+            "Message": "={{ $json.sheets.message }}",
+            "Source": "={{ $json.sheets.source }}",
+            "Route": "={{ $json.sheets.routeType }}",
+            "Notify Phone": "={{ $json.sheets.notifyPhone }}",
+            "Status": "={{ $json.sheets.status }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "google-sheets-append",
+      "name": "Save Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [260, 220]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.routeType }}",
+              "value2": "doctor"
+            }
+          ]
+        }
+      },
+      "id": "if-doctor-route",
+      "name": "Is Doctor Route?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [520, 220]
+    },
+    {
+      "parameters": {
+        "content": "## Setup checklist\n1. Connect **Google Sheets** credentials and set your Sheet ID + tab `Bookings` with header row matching columns.\n2. Connect **WhatsApp** (Twilio / Meta Cloud API / Evolution API) — replace the placeholder WhatsApp nodes with your provider.\n3. Doctor route: send `doctorNotifyMessage` to `notifyPhone`.\n4. Common route: send WhatsApp/SMS to `notifyPhone` **and** email `notifyEmail`.\n5. Use a second WhatsApp Trigger / Wait for reply = YES|NO.\n6. On YES: send `patientConfirmMessage` to patient `phone`, update Sheet Status = confirmed.\n7. On NO: message patient booking could not be confirmed, Status = declined.\n\n### Numbers used by website\n- Dr Pooja → 8284057699\n- Dr Bikramjit → 8284057699\n- Dr Gurvinder → 9988827699 (clinic)\n- Common desk → 7087151555 + info@familycureclinic.com",
+        "height": 460,
+        "width": 420
+      },
+      "id": "sticky-setup",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-420, -40]
+    }
+  ],
+  "connections": {
+    "Webhook Booking": {
+      "main": [
+        [
+          { "node": "Respond Thank You", "type": "main", "index": 0 },
+          { "node": "Save Google Sheet", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Save Google Sheet": {
+      "main": [
+        [
+          { "node": "Is Doctor Route?", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": { "templateCredsSetupCompleted": false }
+}

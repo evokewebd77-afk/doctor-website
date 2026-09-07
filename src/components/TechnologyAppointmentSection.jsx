@@ -1,9 +1,10 @@
 import { ArrowRight, Check, Calendar, Clock, ChevronDown } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { CLINIC_WHATSAPP_URL, PAGE_MAX } from '../data/constants'
 import CloudinaryImage from './media/CloudinaryImage'
 
 const TECH_BG =
-  'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782809095/ChatGPT_Image_Jun_30_2026_02_12_55_PM_afg8ih.png'
+  'https://res.cloudinary.com/drm8wdb7m/image/upload/f_auto,q_90,dpr_auto,w_3200,c_limit/v1784607521/ChatGPT_Image_Jul_21_2026_09_46_06_AM_autbvi.png'
 
 const TECH_FEATURES = [
   'Digital X-Ray, Ultrasound & ECG',
@@ -16,35 +17,44 @@ export default function TechnologyAppointmentSection() {
   return (
     <section id="book-appointment" className={`${PAGE_MAX} py-6 sm:py-8 lg:py-10 w-full scroll-mt-20`}>
       <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-        <div className="relative min-h-[340px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] rounded-2xl overflow-hidden">
-          <CloudinaryImage src={TECH_BG} alt="Advanced medical technology room" variant="hero" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/25 md:bg-gradient-to-r md:from-white/55 md:via-white/35 md:to-white/10 md:w-[72%]" />
-          <div className="relative z-10 h-full flex flex-col justify-center p-5 sm:p-8 lg:p-9 xl:p-10 max-w-full md:max-w-[90%]">
-            <h2 className="font-serif-display text-xl sm:text-2xl lg:text-[1.75rem] xl:text-[2rem] font-bold text-[#102a5e] leading-tight mb-2 sm:mb-3">
+        <div className="relative min-h-[360px] sm:min-h-[420px] md:min-h-[450px] lg:min-h-[480px] xl:min-h-[520px] rounded-3xl overflow-hidden border border-slate-100 shadow-[0_4px_24px_rgba(16,42,94,0.06)]">
+          <CloudinaryImage src={TECH_BG} alt="Advanced medical technology room" variant="hero" className="absolute inset-0 w-full h-full object-cover object-right-center" />
+          
+          {/* High contrast gradient backdrop protecting the left text area */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-50% to-transparent w-full md:w-[82%] pointer-events-none" />
+
+          <div className="relative z-10 h-full flex flex-col justify-center p-6 sm:p-8 lg:p-9 xl:p-10 max-w-full md:max-w-[85%]">
+            <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-[2rem] font-bold text-[#0a1f47] leading-tight mb-2 sm:mb-3">
               Advanced Technology.
               <br />
-              Accurate Care.
+              <span className="text-blue-700">Accurate Care.</span>
             </h2>
-            <p className="text-gray-600 text-[13px] sm:text-sm leading-relaxed mb-4 sm:mb-5 max-w-sm">
+
+            <p className="text-slate-700 font-medium text-[13.5px] sm:text-[14.5px] leading-relaxed mb-4 sm:mb-5 max-w-sm">
               We use advanced diagnostic technology for precise results and better treatments.
             </p>
-            <ul className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-7">
+
+            <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-7">
               {TECH_FEATURES.map((feature) => (
-                <li key={feature} className="flex items-start sm:items-center gap-2 sm:gap-2.5 text-[#102a5e] text-[13px] sm:text-sm">
-                  <span className="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+                <li
+                  key={feature}
+                  className="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-white/90 backdrop-blur-xs border border-blue-100/80 shadow-2xs text-[#0a1f47] font-semibold text-[13px] sm:text-sm"
+                >
+                  <span className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-2xs">
                     <Check className="w-3 h-3 text-white" strokeWidth={3} />
                   </span>
-                  {feature}
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              className="self-start flex items-center gap-2 bg-[#102a5e] text-white px-5 sm:px-6 py-2.5 rounded-full font-semibold hover:bg-blue-900 transition-colors text-xs tracking-wide"
+
+            <Link
+              to="/services"
+              className="self-start inline-flex items-center gap-2 bg-[#0b1f45] text-white px-6 py-2.5 rounded-full font-bold hover:bg-[#102a5e] transition-all text-xs tracking-wider uppercase shadow-sm hover:shadow-md active:scale-95"
             >
-              LEARN MORE
+              <span>LEARN MORE</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </Link>
           </div>
         </div>
 

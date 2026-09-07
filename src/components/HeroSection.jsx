@@ -12,8 +12,7 @@ const HERO_SLIDE_ALTS = [
   'Family Cure Clinic doctors team',
   'Family Cure Clinic patient care',
   'Family Cure Clinic emergency care',
-  'Family Cure Clinic healthcare team',
-  'Family Cure Clinic family care',
+  'Family Cure Clinic medical team',
 ]
 
 export default function HeroSection() {
@@ -38,7 +37,7 @@ export default function HeroSection() {
   }, [slideCount])
 
   return (
-    <section className="relative w-full z-10 bg-[#f8fafe] md:min-h-[560px] lg:min-h-[620px]">
+    <section className="relative w-full z-10 bg-[#f8fafe] md:min-h-[660px] lg:min-h-[740px] xl:min-h-[800px] flex flex-col justify-center">
       {/* Desktop: full background slider */}
       <div className="absolute inset-0 z-0 hidden md:block">
         {HERO_SLIDES.map((src, index) => (
@@ -55,36 +54,40 @@ export default function HeroSection() {
               aria-hidden
               variant="hero"
               loading={index === 0 ? 'eager' : 'lazy'}
-              className={`w-full h-full min-h-[560px] lg:min-h-[620px] ${HERO_SLIDE_IMAGE_OPTS[index]?.desktop ?? 'object-cover object-right'}`}
+              className={`w-full h-full min-h-[660px] lg:min-h-[740px] xl:min-h-[800px] ${HERO_SLIDE_IMAGE_OPTS[index]?.desktop ?? 'object-cover object-[right_top]'}`}
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-[62%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/95 via-55% to-transparent w-[68%] lg:w-[60%] xl:w-[55%] pointer-events-none" />
       </div>
 
       <Header />
 
-      <div className={`relative z-10 ${PAGE_MAX} pt-[5rem] sm:pt-[5.75rem] md:pt-8 lg:pt-10 pb-8 sm:pb-10 md:pb-12 lg:pb-14`}>
-        <div className="max-w-xl lg:max-w-[36rem] xl:max-w-[40rem] space-y-4 sm:space-y-5 py-2 lg:py-6">
-          <p className="text-red-600 font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-[11px] uppercase">
-            Community Care. Family First.
-          </p>
-          <h2 className="font-serif-display text-[clamp(1.65rem,4vw,2.85rem)] font-bold text-[#0a1f47] leading-[1.15]">
+      <div className={`relative z-10 ${PAGE_MAX} pt-4 sm:pt-6 md:pt-10 lg:pt-14 pb-12 sm:pb-16 md:pb-20 lg:pb-24`}>
+        <div className="max-w-xl lg:max-w-[35rem] xl:max-w-[39rem] space-y-4 sm:space-y-5 py-2 lg:py-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100/80">
+            <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+            <span className="text-red-600 font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-[11px] uppercase">
+              Community Care · Family First
+            </span>
+          </div>
+
+          <h1 className="font-serif-display text-[clamp(1.85rem,4.2vw,3rem)] font-bold text-[#0a1f47] leading-[1.18]">
             Your Trusted Family Clinic in Tricity
-          </h2>
-          <p className="text-[#2d3748] text-[13px] sm:text-sm md:text-[15px] leading-[1.7] max-w-2xl">
+          </h1>
+
+          <p className="text-[#102a5e] font-semibold text-[14.5px] sm:text-[15.5px] md:text-[17px] leading-[1.6] max-w-xl">
             Complete healthcare for children, women, adults, and senior citizens—all under one roof.
           </p>
-          <p className="text-gray-500 text-[12px] sm:text-[13px] md:text-sm leading-[1.7] max-w-2xl">
+
+          <p className="text-[#1e293b] text-[13.5px] sm:text-[14.5px] md:text-[15.5px] leading-[1.75] max-w-xl font-normal">
             Providing doctor consultations, diagnostics, vaccinations, women&apos;s healthcare, home healthcare, and
-            teleconsultation services across Chandigarh, Mohali, and Panchkula.
+            teleconsultation services across <strong className="font-semibold text-[#0a1f47]">Chandigarh</strong>, <strong className="font-semibold text-[#0a1f47]">Mohali</strong>, and <strong className="font-semibold text-[#0a1f47]">Panchkula</strong>.
           </p>
 
           {/* Mobile: slide image shown separately (not as bg) */}
           <div
-            className={`md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0_8px_28px_rgba(16,42,94,0.12)] border border-gray-100 bg-white ${
-              HERO_SLIDE_IMAGE_OPTS[activeSlide]?.mobileAspect ?? 'aspect-[4/3] sm:aspect-[16/11]'
-            }`}
+            className={`md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0_8px_28px_rgba(16,42,94,0.12)] border border-gray-100 bg-white aspect-[16/11] sm:aspect-[16/10] min-h-[280px] sm:min-h-[340px]`}
           >
             {HERO_SLIDES.map((src, index) => (
               <div

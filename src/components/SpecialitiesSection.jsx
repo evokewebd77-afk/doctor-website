@@ -25,8 +25,7 @@ const SPECIALITIES = [
     title: 'Pediatrics & Neonatology',
     desc: 'Specialized care for newborns, infants, children and adolescents at every stage.',
     icon: RI.baby,
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782803293/pediatrics_separate_eo81ya.png',
-    imageZoom: true,
+    image: '/child.png',
     to: '/services/pediatrics-neonatology',
   },
 ]

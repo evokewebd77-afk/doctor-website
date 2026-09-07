@@ -12,12 +12,13 @@ import PediatricsNeonatologyPage from './pages/PediatricsNeonatologyPage'
 import Footer from './components/Footer'
 import BottomBar from './components/BottomBar'
 import ScrollToTop from './components/ScrollToTop'
+import BackToTop from './components/BackToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#f8fafe] font-sans text-gray-800 overflow-x-hidden pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-[calc(4.75rem+env(safe-area-inset-bottom))] w-full">
+      <div className="min-h-screen bg-[#f8fafe] font-sans text-gray-800 overflow-x-hidden pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0 w-full">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -34,6 +35,7 @@ export default function App() {
           <Footer />
         </div>
         <BottomBar />
+        <BackToTop />
       </div>
     </BrowserRouter>
   )
