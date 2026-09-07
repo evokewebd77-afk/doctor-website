@@ -17,9 +17,7 @@ export default function AboutHero() {
             aria-hidden
           />
           {/* Gradient backdrop for text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
-          {/* Extra wash for mobile to guarantee readability */}
-          <div className="absolute inset-0 bg-white/50 md:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent w-full sm:w-[85%] md:w-[75%]" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] py-10 sm:py-14 lg:py-16`}>
