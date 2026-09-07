@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Calendar, Phone } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
 import { HOME_CARE_HERO_VIDEO, HOME_CARE_HERO_FEATURES } from '../../data/homeCareData'
@@ -52,13 +53,13 @@ export default function HomeCareHero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1">
-              <button
-                type="button"
+              <Link
+                to="/contact"
                 className="flex items-center justify-center gap-2 bg-[#102a5e] text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-900 transition-colors text-sm w-full sm:w-auto"
               >
                 <Calendar className="w-4 h-4" />
                 Book Home Care
-              </button>
+              </Link>
               <a
                 href={`tel:${CLINIC_PHONE}`}
                 className="flex items-center justify-center gap-2 bg-white text-[#102a5e] border-2 border-[#102a5e] px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"

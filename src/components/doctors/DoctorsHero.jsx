@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Calendar, Phone } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
 import { DOCTORS_HERO_BG, DOCTORS_HERO_AVATAR } from '../../data/doctorsData'
@@ -45,13 +46,13 @@ export default function DoctorsHero() {
               <Phone className="w-4 h-4" />
               Call Us Now
             </a>
-            <button
-              type="button"
+            <Link
+              to="/contact"
               className="flex items-center justify-center gap-2 bg-white text-blue-600 border-2 border-blue-600 px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"
             >
               <Calendar className="w-4 h-4" />
               Book Appointment
-            </button>
+            </Link>
           </div>
         </div>
 

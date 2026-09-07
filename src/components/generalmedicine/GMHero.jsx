@@ -61,7 +61,7 @@ export default function GMHero() {
 
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <Link
-                to="#book-appointment"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors shadow-[0_4px_16px_rgba(37,99,235,0.3)]"
               >
                 Book Appointment

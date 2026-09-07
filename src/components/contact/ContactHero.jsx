@@ -43,13 +43,13 @@ export default function ContactHero() {
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>
-              <button
-                type="button"
+              <a
+                href="#contact-form"
                 className="flex items-center justify-center gap-2 bg-white text-blue-600 border-2 border-blue-600 px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"
               >
                 <Calendar className="w-4 h-4" />
                 Book Appointment
-              </button>
+              </a>
             </div>
           </div>
         </div>
