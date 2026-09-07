@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight, PhoneCall } from 'lucide-react'
+import { ArrowRight, Calendar, ChevronLeft, ChevronRight, PhoneCall, MapPin, Clock } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { HERO_SLIDES, HERO_SLIDE_IMAGE_OPTS, HOME_EMERGENCY_PHONE, HOME_EMERGENCY_PHONE_DISPLAY, PAGE_MAX } from '../data/constants'
+import { HERO_SLIDES, HERO_SLIDE_IMAGE_OPTS, HOME_EMERGENCY_PHONE, HOME_EMERGENCY_PHONE_DISPLAY, PAGE_MAX, CLINIC_MAPS_URL } from '../data/constants'
 import Header from './Header'
 import CloudinaryImage from './media/CloudinaryImage'
 
@@ -65,6 +65,25 @@ export default function HeroSection() {
 
       <div className={`relative z-10 ${PAGE_MAX} pt-4 sm:pt-6 md:pt-10 lg:pt-14 pb-12 sm:pb-16 md:pb-20 lg:pb-24`}>
         <div className="max-w-xl lg:max-w-[35rem] xl:max-w-[39rem] space-y-4 sm:space-y-5 py-2 lg:py-6">
+          {/* Location & Timings Capsule */}
+          <div className="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 p-1 pr-3.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-[0_2px_10px_rgba(16,42,94,0.06)] text-[11px] sm:text-xs">
+            <a
+              href={CLINIC_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-xs"
+            >
+              <MapPin className="w-3 h-3 text-white shrink-0" />
+              <span>Aerocity, Mohali</span>
+            </a>
+            <div className="inline-flex items-center gap-1.5 text-[#102a5e] font-semibold">
+              <Clock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+              <span>Mon – Sat: 9:00 AM – 8:00 PM</span>
+              <span className="text-slate-300">·</span>
+              <span className="text-slate-600 font-medium">Sun: 10 AM – 2 PM</span>
+            </div>
+          </div>
+
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100/80">
             <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
             <span className="text-red-600 font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-[11px] uppercase">
