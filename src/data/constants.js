@@ -12,15 +12,15 @@ export const HERO_BG_4 =
 
 export const HERO_BG_5 = '/ds.png'
 
-export const HERO_SLIDES = [HERO_BG, HERO_BG_3, HERO_BG_2, HERO_BG_4, HERO_BG_5]
+export const HERO_SLIDES = [HERO_BG, HERO_BG_3, HERO_BG_2, HERO_BG_5, HERO_BG_4]
 
 /** Per-slide image fit — wide banners avoid cropping the top */
 export const HERO_SLIDE_IMAGE_OPTS = [
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right scale-[1.45] sm:scale-[1.3] origin-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
-  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-center', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[16/11] sm:aspect-[16/10]' },
+  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-center', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
 ]
 
 export const FAMILY_IMG =
