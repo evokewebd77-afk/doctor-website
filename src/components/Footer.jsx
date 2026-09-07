@@ -121,13 +121,11 @@ export default function Footer() {
           {/* Brand Info (Span 4) */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="inline-block group">
-              <div className="bg-white px-4 py-3 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.25)] border border-white/25 inline-flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_6px_24px_rgba(255,255,255,0.25)]">
-                <img
-                  src={CLINIC_LOGO}
-                  alt="Family Cure Clinic - We Love Your Health"
-                  className="h-16 sm:h-20 w-auto object-contain"
-                />
-              </div>
+              <img
+                src={CLINIC_LOGO}
+                alt="Family Cure Clinic - We Love Your Health"
+                className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_0_14px_rgba(255,255,255,0.8)] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-400/30 text-rose-200 text-xs font-semibold">
