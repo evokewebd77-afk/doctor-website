@@ -1,8 +1,7 @@
 export const HERO_BG =
   'https://res.cloudinary.com/dwnnakrrh/image/upload/v1783141781/ChatGPT_Image_Jul_4_2026_10_38_42_AM_xsxik6.png'
 
-export const HERO_BG_2 =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783399180/6f6555e0-521c-496b-9534-82d2f7fbf7f4_unz9ot.png'
+export const HERO_BG_2 = '/slide2.png'
 
 export const HERO_BG_3 =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783399636/ChatGPT_Image_Jul_7_2026_10_16_50_AM_cjvwn9.png'
