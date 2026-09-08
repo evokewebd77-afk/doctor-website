@@ -18,23 +18,23 @@ export default function ContactHero() {
             variant="hero"
             className="w-full h-full object-cover object-[75%_20%] sm:object-[100%_20%] lg:object-[100%_20%] pointer-events-none select-none"
           />
-          {/* Mobile gradient (top-down) with reduced opacity so image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/75 via-[#f8fafe]/40 via-50% to-transparent pointer-events-none" />
+          {/* Mobile gradient (top-down) ensuring crisp contrast for white text while keeping image visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/40 via-55% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/85 to-transparent w-full md:w-[70%] lg:w-[58%]" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[420px] sm:min-h-[460px] lg:min-h-[520px] py-10 sm:py-14 lg:py-16`}>
           <div className="w-full max-w-[520px] lg:max-w-[48%] space-y-4 sm:space-y-5">
-            <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full">
+            <span className="inline-block bg-blue-600 text-white md:bg-[#e8f1fd] md:text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full shadow-sm">
               Contact Us
             </span>
 
-            <h1 className="font-serif-display text-[1.65rem] sm:text-[2.2rem] lg:text-[2.5rem] font-bold text-[#102a5e] leading-[1.15]">
+            <h1 className="font-serif-display text-[1.65rem] sm:text-[2.2rem] lg:text-[2.5rem] font-bold text-white md:text-[#102a5e] leading-[1.15] [text-shadow:_0_2px_8px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               We&apos;re Here to Support Your Family&apos;s Health
             </h1>
 
-            <p className="text-gray-500 text-[13px] sm:text-[15px] leading-relaxed max-w-lg">
+            <p className="text-white/95 md:text-gray-500 text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_6px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Whether you need an appointment, have an enquiry, want to book a lab test, need home care, or
               prefer a teleconsultation — our team is ready to help you with care and compassion.
             </p>
@@ -42,14 +42,14 @@ export default function ContactHero() {
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1">
               <a
                 href={`tel:${CLINIC_PHONE}`}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto shadow-md"
               >
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>
               <a
                 href="#contact-form"
-                className="flex items-center justify-center gap-2 bg-white text-blue-600 border-2 border-blue-600 px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-white text-blue-600 border-2 border-white md:border-blue-600 px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto shadow-md"
               >
                 <Calendar className="w-4 h-4" />
                 Book Appointment

@@ -20,8 +20,8 @@ export default function HomeCareHero() {
             variant="hero"
             className="w-full h-full object-cover object-[100%_20%] pointer-events-none select-none"
           />
-          {/* Mobile gradient (top-down) with reduced opacity so image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/75 via-[#f8fafe]/40 via-50% to-transparent pointer-events-none" />
+          {/* Mobile gradient (top-down) ensuring crisp contrast for white text while keeping image visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/40 via-55% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/85 to-transparent w-full md:w-[55%] lg:w-[48%]" />
         </div>
@@ -29,31 +29,31 @@ export default function HomeCareHero() {
         {/* Content on the left */}
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[440px] sm:min-h-[480px] lg:min-h-[540px] py-10 sm:py-14 lg:py-16`}>
           <div className="w-full max-w-[500px] lg:max-w-[45%] space-y-4 sm:space-y-5">
-            <span className="inline-block bg-white text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200 shadow-sm">
+            <span className="inline-block bg-blue-600 text-white md:bg-white md:text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200/50 shadow-sm">
               Home Care Services
             </span>
 
-            <h1 className="font-serif-display text-[1.65rem] sm:text-[2.35rem] lg:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12]">
+            <h1 className="font-serif-display text-[1.65rem] sm:text-[2.35rem] lg:text-[2.65rem] font-bold text-white md:text-[#102a5e] leading-[1.12] [text-shadow:_0_2px_8px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Quality Healthcare, Right at
               <br />
-              <span className="text-blue-600">Your Home</span>
+              <span className="text-blue-300 md:text-blue-600">Your Home</span>
             </h1>
 
-            <p className="text-gray-500 text-[13px] sm:text-[15px] leading-relaxed max-w-lg">
+            <p className="text-white/95 md:text-gray-500 text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_6px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Compassionate and professional care delivered in the comfort of your home for you and your loved ones.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1">
               <Link
                 to="/contact"
-                className="flex items-center justify-center gap-2 bg-[#102a5e] text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-900 transition-colors text-sm w-full sm:w-auto shadow-[0_4px_16px_rgba(16,42,94,0.2)]"
+                className="flex items-center justify-center gap-2 bg-blue-600 md:bg-[#102a5e] text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 md:hover:bg-blue-900 transition-colors text-sm w-full sm:w-auto shadow-[0_4px_16px_rgba(16,42,94,0.2)]"
               >
                 <Calendar className="w-4 h-4" />
                 Book Home Care
               </Link>
               <a
                 href={`tel:${CLINIC_PHONE}`}
-                className="flex items-center justify-center gap-2 bg-white text-[#102a5e] border-2 border-[#102a5e] px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-white text-[#102a5e] border-2 border-white md:border-[#102a5e] px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-50 transition-colors text-sm w-full sm:w-auto shadow-md"
               >
                 <Phone className="w-4 h-4" />
                 Call for Assistance
