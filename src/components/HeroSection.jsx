@@ -118,7 +118,7 @@ export default function HeroSection() {
 
           {/* Mobile: slide image shown separately (not as bg) */}
           <div
-            className={`md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0_8px_28px_rgba(16,42,94,0.12)] border border-gray-100 bg-white aspect-[16/11] sm:aspect-[16/10] min-h-[280px] sm:min-h-[340px]`}
+            className={`md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0_8px_28px_rgba(16,42,94,0.12)] border border-gray-100 bg-white aspect-[16/10]`}
           >
             {HERO_SLIDES.map((src, index) => (
               <div

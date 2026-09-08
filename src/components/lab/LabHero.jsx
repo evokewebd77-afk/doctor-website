@@ -17,8 +17,8 @@ export default function LabHero() {
             className="absolute inset-0 w-full h-full object-cover object-[75%_bottom] sm:object-[right_top] pointer-events-none select-none"
             aria-hidden
           />
-          {/* Mobile gradient (top-down) for complete text clarity */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white via-white/98 via-65% to-transparent pointer-events-none" />
+          {/* Mobile gradient with reduced opacity so lab image is clearly visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white/80 via-white/45 via-50% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/85 via-45% to-transparent w-full md:w-[68%] lg:w-[55%] pointer-events-none" />
         </div>

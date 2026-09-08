@@ -15,8 +15,8 @@ export default function DoctorsHero() {
           variant="hero"
           className="w-full h-full object-cover object-[85%_70%] md:object-[100%_35%] pointer-events-none select-none"
         />
-        {/* Mobile gradient for complete text clarity */}
-        <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe] via-[#f8fafe]/95 via-55% to-transparent" />
+        {/* Mobile gradient with reduced opacity so image is clearly visible */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/75 via-[#f8fafe]/40 via-50% to-transparent pointer-events-none" />
         {/* Desktop subtle gradient on left to guarantee text readability without blurring patient */}
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/90 via-45% to-transparent w-full md:w-[65%] lg:w-[50%]" />
       </div>

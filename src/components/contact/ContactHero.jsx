@@ -18,8 +18,8 @@ export default function ContactHero() {
             variant="hero"
             className="w-full h-full object-cover object-[75%_20%] sm:object-[100%_20%] lg:object-[100%_20%] pointer-events-none select-none"
           />
-          {/* Mobile gradient (top-down) for text contrast */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe] via-[#f8fafe]/90 to-[#f8fafe]/30 h-[90%] sm:h-[80%] w-full" />
+          {/* Mobile gradient (top-down) with reduced opacity so image is clearly visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/75 via-[#f8fafe]/40 via-50% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/85 to-transparent w-full md:w-[70%] lg:w-[58%]" />
         </div>
