@@ -17,8 +17,8 @@ export default function LabHero() {
             className="absolute inset-0 w-full h-full object-cover object-[75%_bottom] sm:object-[right_top] pointer-events-none select-none"
             aria-hidden
           />
-          {/* Mobile gradient with decreased opacity so lab image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white/40 via-white/15 via-45% to-transparent pointer-events-none" />
+          {/* Mobile gradient (top-down) ensuring crisp contrast for white text while keeping image visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/40 via-55% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/85 via-45% to-transparent w-full md:w-[68%] lg:w-[55%] pointer-events-none" />
         </div>
@@ -26,17 +26,17 @@ export default function LabHero() {
         {/* Text content */}
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[460px] sm:min-h-[480px] lg:min-h-[520px] py-10 sm:py-14 lg:py-16`}>
           <div className="w-full max-w-[520px] lg:max-w-[48%] space-y-4 sm:space-y-5">
-            <span className="inline-block bg-white text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200 shadow-sm">
+            <span className="inline-block bg-blue-600 text-white md:bg-white md:text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200/50 shadow-sm">
               Lab Services
             </span>
 
-            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12]">
+            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.65rem] font-bold text-white md:text-[#102a5e] leading-[1.12] [text-shadow:_0_2px_8px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Advanced Testing.{' '}
-              <span className="text-blue-600">Accurate Results.</span>{' '}
+              <span className="text-blue-300 md:text-blue-600">Accurate Results.</span>{' '}
               Better Decisions.
             </h1>
 
-            <p className="text-[#0a1f47] md:text-[#2b3a55] text-[14px] sm:text-[15px] font-semibold md:font-normal leading-relaxed max-w-lg">
+            <p className="text-white/95 md:text-[#2b3a55] text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_6px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Our state-of-the-art laboratory delivers precise, reliable, and timely results to help you take
               charge of your health with confidence.
             </p>
@@ -45,14 +45,14 @@ export default function LabHero() {
               {LAB_HERO_FEATURES.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-3 bg-white/95 md:bg-transparent px-3.5 py-2 md:p-0 rounded-xl border border-blue-100/90 md:border-0 shadow-xs md:shadow-none min-w-0"
+                  className="flex items-center gap-3 bg-slate-900/75 md:bg-transparent backdrop-blur-md px-3.5 py-2 md:p-0 rounded-xl border border-white/15 md:border-0 shadow-sm md:shadow-none min-w-0"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/20 md:bg-blue-50 border border-blue-400/30 md:border-blue-100 flex items-center justify-center shrink-0 shadow-xs">
                     <RealisticIcon src={item.icon} alt="" size="xs" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[#0a1f47] md:text-[#102a5e] font-bold text-[13.5px] sm:text-sm leading-tight">{item.label}</p>
-                    <p className="text-blue-700 md:text-gray-600 font-semibold md:font-medium text-xs mt-0.5">{item.sublabel}</p>
+                    <p className="text-white md:text-[#102a5e] font-bold text-[13.5px] sm:text-sm leading-tight">{item.label}</p>
+                    <p className="text-blue-300 md:text-gray-600 font-semibold md:font-medium text-xs mt-0.5">{item.sublabel}</p>
                   </div>
                 </div>
               ))}
