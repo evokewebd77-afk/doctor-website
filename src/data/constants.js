@@ -91,3 +91,7 @@ export const CLINIC_MAPS_EMBED_URL = `https://www.google.com/maps?q=${CLINIC_LAT
 
 export const CLINIC_EMAIL = 'info@familycureclinic.com'
 export const CLINIC_LOGO = '/logo.png'
+
+export const CLINIC_TIMINGS_MORNING = 'Morning: 9:30 AM – 1:00 PM'
+export const CLINIC_TIMINGS_EVENING = 'Evening: 5:00 PM – 8:00 PM'
+export const CLINIC_TIMINGS_SUNDAY = 'Sunday: By Appointment'

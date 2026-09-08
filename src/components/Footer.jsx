@@ -236,9 +236,10 @@ export default function Footer() {
                 {/* Hours */}
                 <div className="pt-2 border-t border-white/15 flex items-start gap-2.5 text-blue-100/80">
                   <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div className="leading-snug">
-                    <p className="font-semibold text-white">Mon – Sat: 9:00 AM – 8:00 PM</p>
-                    <p className="text-blue-200/70 text-[11px] mt-0.5">Sunday: 10:00 AM – 2:00 PM</p>
+                  <div className="leading-snug space-y-0.5">
+                    <p className="font-semibold text-white">Morning: 9:30 AM – 1:00 PM</p>
+                    <p className="font-semibold text-white">Evening: 5:00 PM – 8:00 PM</p>
+                    <p className="text-amber-300 font-medium text-[11px] pt-0.5">Sunday: By Appointment</p>
                   </div>
                 </div>
 

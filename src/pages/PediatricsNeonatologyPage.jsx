@@ -121,9 +121,8 @@ const STATS = [
 const CONSULTATION_FEE = '₹600'
 
 const TIME_SLOTS = {
-  Morning: ['9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM'],
-  Afternoon: ['12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM'],
-  Evening: ['5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'],
+  Morning: ['9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM'],
+  Evening: ['5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'],
 }
 
 const STEP_LABELS = ['Pick Date', 'Select Time', 'Appointment Summary']
@@ -133,9 +132,9 @@ const ACCENT_STYLES = {
   pink: 'bg-pink-50 border-pink-100',
   purple: 'bg-purple-50 border-purple-100',
   blue: 'bg-blue-50 border-blue-100',
-  yellow: 'bg-amber-50 border-amber-100',
-  red: 'bg-red-50 border-red-100',
-  cyan: 'bg-cyan-50 border-cyan-100',
+  teal: 'bg-teal-50 border-teal-100',
+  amber: 'bg-amber-50 border-amber-100',
+  green: 'bg-green-50 border-green-100',
 }
 
 function buildCalendarDays(year, month) {
@@ -148,11 +147,13 @@ function buildCalendarDays(year, month) {
 }
 
 export default function PediatricsNeonatologyPage() {
+  const [activeTab, setActiveTab] = useState('doctor')
+  const [formSubmitted, setFormSubmitted] = useState(false)
   const today = new Date()
   const [month, setMonth] = useState(today.getMonth())
   const [year, setYear] = useState(today.getFullYear())
   const [selectedDay, setSelectedDay] = useState(today.getDate())
-  const [selectedSlot, setSelectedSlot] = useState('9:00 AM')
+  const [selectedSlot, setSelectedSlot] = useState('9:30 AM')
   const [activeStep, setActiveStep] = useState(1)
 
   const monthLabel = new Date(year, month).toLocaleString('default', {
@@ -537,8 +538,8 @@ export default function PediatricsNeonatologyPage() {
             >
               {CLINIC_PHONE_DISPLAY_FULL}
             </a>
-            <p className="mt-2 text-[10px] text-white/40">Mon - Sat: 9:00 AM - 8:00 PM</p>
-            <p className="text-[10px] text-white/40">Sunday: 10:00 AM - 2:00 PM</p>
+            <p className="mt-2 text-[10px] text-white/60">Morning: 9:30 AM – 1:00 PM | Evening: 5:00 PM – 8:00 PM</p>
+            <p className="text-[10px] text-amber-300">Sunday: By Appointment</p>
           </div>
         </div>
 

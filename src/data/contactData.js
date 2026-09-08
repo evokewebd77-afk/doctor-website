@@ -74,7 +74,7 @@ export const CONTACT_INFO_ROWS = [
   {
     image: RI.clock,
     title: 'Working Hours',
-    lines: ['Mon - Sat : 8:00 AM - 8:00 PM', 'Sunday : 9:00 AM - 2:00 PM'],
+    lines: ['Morning: 9:30 AM – 1:00 PM', 'Evening: 5:00 PM – 8:00 PM', 'Sunday: By Appointment'],
     badge: null,
   },
   {

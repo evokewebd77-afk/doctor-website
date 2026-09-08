@@ -36,7 +36,7 @@ export default function GMInfoStats() {
             <Phone className="w-5 h-5" />
             {CLINIC_PHONE_DISPLAY}
           </a>
-          <p className="text-white/40 text-[10px] mt-2">Mon – Sat: 9:00 AM – 8:00 PM</p>
+          <p className="text-white/60 text-[10px] mt-2">Morning: 9:30 AM – 1:00 PM | Evening: 5:00 PM – 8:00 PM | Sun: By Appointment</p>
         </div>
       </div>
 

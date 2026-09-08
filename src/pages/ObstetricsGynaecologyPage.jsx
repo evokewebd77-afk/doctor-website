@@ -104,9 +104,8 @@ const STATS = [
 const CONSULTATION_FEE = '₹800'
 
 const TIME_SLOTS = {
-  Morning: ['9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM'],
-  Afternoon: ['12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM'],
-  Evening: ['5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'],
+  Morning: ['9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM'],
+  Evening: ['5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'],
 }
 
 const STEP_LABELS = ['Pick Date', 'Select Time', 'Appointment Summary']
@@ -134,7 +133,7 @@ export default function ObstetricsGynaecologyPage() {
   const [month, setMonth] = useState(today.getMonth())
   const [year, setYear] = useState(today.getFullYear())
   const [selectedDay, setSelectedDay] = useState(today.getDate())
-  const [selectedSlot, setSelectedSlot] = useState('9:00 AM')
+  const [selectedSlot, setSelectedSlot] = useState('9:30 AM')
   const [activeStep, setActiveStep] = useState(1)
 
   const monthLabel = new Date(year, month).toLocaleString('default', {
@@ -558,8 +557,8 @@ export default function ObstetricsGynaecologyPage() {
               <Phone className="h-5 w-5" />
               {CLINIC_PHONE_DISPLAY}
             </a>
-            <p className="mt-2 text-[10px] text-white/40">Mon - Sat: 9:00 AM - 8:00 PM</p>
-            <p className="text-[10px] text-white/40">Sunday: 10:00 AM - 2:00 PM</p>
+            <p className="mt-2 text-[10px] text-white/60">Morning: 9:30 AM – 1:00 PM | Evening: 5:00 PM – 8:00 PM</p>
+            <p className="text-[10px] text-amber-300">Sunday: By Appointment</p>
           </div>
         </div>
 

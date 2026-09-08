@@ -60,13 +60,12 @@ export const GM_DOCTOR_STATS = [
   { value: '98%', label: 'Satisfaction', icon: RI.verified },
 ]
 
-export const GM_OPD_TIMINGS = 'Mon – Sat: 9:00 AM – 8:00 PM'
+export const GM_OPD_TIMINGS = 'Morning: 9:30 AM – 1:00 PM | Evening: 5:00 PM – 8:00 PM | Sun: By Appointment'
 
 export const GM_BOOKING_STEPS = ['Pick Date', 'Select Time', 'Appointment Summary']
 
 export const GM_TIME_SLOTS = {
-  Morning: ['9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM'],
-  Afternoon: ['12:00 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM'],
+  Morning: ['9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM'],
   Evening: ['5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'],
 }
 

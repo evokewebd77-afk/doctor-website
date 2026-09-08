@@ -26,7 +26,7 @@ export default function GMBookAppointment() {
   const [month, setMonth] = useState(today.getMonth())
   const [year, setYear] = useState(today.getFullYear())
   const [selectedDay, setSelectedDay] = useState(today.getDate())
-  const [selectedSlot, setSelectedSlot] = useState('9:00 AM')
+  const [selectedSlot, setSelectedSlot] = useState('9:30 AM')
   const [activeStep, setActiveStep] = useState(1)
 
   const monthLabel = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' })
