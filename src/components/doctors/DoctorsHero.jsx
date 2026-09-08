@@ -31,11 +31,11 @@ export default function DoctorsHero() {
             Our Doctors
           </span>
 
-          <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12]">
+          <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12] [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff] md:[text-shadow:none]">
             Expert Care. For You and Your Family.
           </h1>
 
-          <p className="text-[#2b3a55] text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg">
+          <p className="text-[#102a5e] text-[13.5px] sm:text-[15px] font-semibold sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff,_0_0_16px_rgba(255,255,255,0.95)] md:[text-shadow:none]">
             Our team of experienced doctors is committed to providing personalized, compassionate healthcare —
             guiding you and your loved ones through every step of your health journey.
           </p>
