@@ -28,11 +28,11 @@ export default function AboutHero() {
               About Us
             </span>
 
-            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#0a1f47] leading-[1.15] [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff] md:[text-shadow:none]">
+            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#0a1f47] leading-[1.15]">
               Caring for Families, Building Healthier Lives
             </h1>
 
-            <p className="text-[#071739] text-[14px] sm:text-[15.5px] font-semibold sm:font-medium leading-relaxed max-w-lg [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff,_0_0_16px_rgba(255,255,255,0.95)] md:[text-shadow:none]">
+            <p className="text-[#0a1f47] text-[14px] sm:text-[15.5px] font-semibold sm:font-medium leading-relaxed max-w-lg">
               At Family Cure Clinic, we are dedicated to providing compassionate, high-quality healthcare for you and
               your loved ones. From routine check-ups to specialized treatments, our team is here to support your
               family&apos;s health journey with expertise and care.

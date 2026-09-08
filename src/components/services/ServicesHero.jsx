@@ -32,12 +32,12 @@ export default function ServicesHero() {
               Our Services
             </span>
 
-            <h1 className="font-serif-display text-[1.65rem] leading-[1.15] sm:text-[clamp(1.9rem,3.5vw,3rem)] font-bold text-[#102a5e] [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff] md:[text-shadow:none]">
+            <h1 className="font-serif-display text-[1.65rem] leading-[1.15] sm:text-[clamp(1.9rem,3.5vw,3rem)] font-bold text-[#102a5e]">
               Comprehensive Care for{' '}
               <span className="text-blue-600">Every Stage</span> of Life
             </h1>
 
-            <p className="text-[#071739] md:text-gray-500 text-[13.5px] sm:text-[15px] font-semibold sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff,_0_0_16px_rgba(255,255,255,0.95)] md:[text-shadow:none]">
+            <p className="text-[#0a1f47] md:text-gray-500 text-[13.5px] sm:text-[15px] font-semibold sm:font-normal leading-relaxed max-w-lg">
               Exceptional care, advanced technology, and compassionate experts — all under one roof, for you and your
               family.
             </p>
