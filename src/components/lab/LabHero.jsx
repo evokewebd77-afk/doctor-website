@@ -30,13 +30,13 @@ export default function LabHero() {
               Lab Services
             </span>
 
-            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12]">
+            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12] [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff] md:[text-shadow:none]">
               Advanced Testing.{' '}
               <span className="text-blue-600">Accurate Results.</span>{' '}
               Better Decisions.
             </h1>
 
-            <p className="text-[#2b3a55] text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg">
+            <p className="text-[#071739] md:text-[#2b3a55] text-[13.5px] sm:text-[15px] font-semibold sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_3px_#fff,_0_0_8px_#fff,_0_0_16px_rgba(255,255,255,0.95)] md:[text-shadow:none]">
               Our state-of-the-art laboratory delivers precise, reliable, and timely results to help you take
               charge of your health with confidence.
             </p>
@@ -44,12 +44,12 @@ export default function LabHero() {
             <div className="flex flex-col sm:flex-row flex-wrap gap-3.5 sm:gap-6 pt-1">
               {LAB_HERO_FEATURES.map((item) => (
                 <div key={item.label} className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-10 h-10 rounded-xl bg-white/90 md:bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 shadow-sm">
                     <RealisticIcon src={item.icon} alt={item.label} size="xs" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[#102a5e] font-bold text-sm leading-tight">{item.label}</p>
-                    <p className="text-gray-600 font-medium text-xs mt-0.5">{item.sublabel}</p>
+                    <p className="text-[#102a5e] font-bold text-sm leading-tight [text-shadow:_0_1px_2px_#fff,_0_0_6px_#fff] md:[text-shadow:none]">{item.label}</p>
+                    <p className="text-gray-800 md:text-gray-600 font-semibold md:font-medium text-xs mt-0.5 [text-shadow:_0_1px_2px_#fff,_0_0_6px_#fff] md:[text-shadow:none]">{item.sublabel}</p>
                   </div>
                 </div>
               ))}
