@@ -82,7 +82,7 @@ export default function HeroSection() {
             </a>
 
             {/* Timings Pill with Live Indicator */}
-            <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-[0_2px_12px_rgba(16,42,94,0.06)] text-[11px] sm:text-xs text-[#0a1f47]">
+            <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-[0_2px_12px_rgba(16,42,94,0.06)] text-[11px] sm:text-xs text-[#0a1f47]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -90,12 +90,9 @@ export default function HeroSection() {
               <Clock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
               <span className="font-bold text-[#0a1f47]">Morning:</span>
               <span className="font-semibold text-slate-700">9:30 AM – 1:00 PM</span>
-              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
+              <span className="inline-block w-1 h-1 rounded-full bg-slate-300" />
               <span className="font-bold text-[#0a1f47]">Evening:</span>
               <span className="font-semibold text-slate-700">5:00 PM – 8:00 PM</span>
-              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
-              <span className="font-bold text-[#0a1f47]">Sun:</span>
-              <span className="font-semibold text-slate-700">By Appointment</span>
             </div>
           </div>
 
