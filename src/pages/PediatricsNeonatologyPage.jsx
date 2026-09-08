@@ -29,7 +29,7 @@ const HERO_BG =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783917530/ChatGPT_Image_Jul_13_2026_10_06_21_AM_vjgsas.png'
 
 const HERO_IMAGE =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783917528/ChatGPT_Image_Jul_13_2026_10_00_09_AM_mwka4l.png'
+  'https://res.cloudinary.com/drm8wdb7m/image/upload/f_auto,q_90,dpr_auto,w_3200,c_limit/v1784623570/ChatGPT_Image_Jul_21_2026_02_15_30_PM_pigbcq.png'
 
 const NEWBORN_IMAGE =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783917525/c00bde35-b54e-4235-bd58-bc4a1566a248_ut8xis.png'
@@ -230,42 +230,14 @@ export default function PediatricsNeonatologyPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[320px] sm:min-h-[380px] lg:min-h-[430px]">
-              <div className="absolute inset-0 overflow-hidden rounded-[28px] border border-white/80 bg-white shadow-[0_18px_56px_rgba(16,42,94,0.14)]">
+            <div className="relative w-full aspect-[16/10.5] sm:aspect-auto sm:min-h-[380px] lg:min-h-[430px]">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl sm:rounded-[28px] border border-white/80 bg-white shadow-[0_18px_56px_rgba(16,42,94,0.14)]">
                 <CloudinaryImage
                   src={HERO_IMAGE}
-                  alt="Pediatric doctor examining a baby with mother"
+                  alt="Pediatric doctor examining a baby with parents"
                   variant="hero"
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-cover object-[center_20%]"
                 />
-              </div>
-
-              <div className="absolute right-3 top-3 w-[185px] rounded-2xl border border-pink-100 bg-white/95 px-3.5 py-3 shadow-lg backdrop-blur-md sm:right-4 sm:top-4 sm:w-[210px]">
-                <div className="flex items-start gap-2.5">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-pink-100 bg-pink-50">
-                    <Heart className="h-3.5 w-3.5 fill-pink-500 text-pink-500" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-bold text-[#102a5e] sm:text-xs">Compassionate Care</p>
-                    <p className="mt-0.5 text-[9px] leading-relaxed text-gray-500 sm:text-[10px]">
-                      Gentle, empathetic care for every child in a warm and comforting environment.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-3 right-3 w-[185px] rounded-2xl border border-purple-100 bg-white/95 px-3.5 py-3 shadow-lg backdrop-blur-md sm:bottom-4 sm:right-4 sm:w-[210px]">
-                <div className="flex items-start gap-2.5">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-purple-100 bg-purple-50">
-                    <User className="h-3.5 w-3.5 text-purple-500" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-bold text-[#102a5e] sm:text-xs">Trusted Experts</p>
-                    <p className="mt-0.5 text-[9px] leading-relaxed text-gray-500 sm:text-[10px]">
-                      Experienced pediatric specialists dedicated to your child&apos;s health and well-being.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

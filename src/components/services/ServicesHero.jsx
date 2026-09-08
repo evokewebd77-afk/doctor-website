@@ -26,7 +26,7 @@ export default function ServicesHero() {
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
         </div>
 
-        <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[500px] pt-5 sm:pt-10 lg:pt-12 pb-28 sm:pb-36`}>
+        <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] py-10 sm:py-14 lg:py-16`}>
           <div className="w-full lg:max-w-[44%] space-y-3.5 sm:space-y-5">
             <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] uppercase px-3.5 py-1 rounded-full">
               Our Services
@@ -60,38 +60,39 @@ export default function ServicesHero() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className={`absolute bottom-0 left-0 right-0 z-30 ${PAGE_MAX} translate-y-1/2`}>
-          <div className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(16,42,94,0.12)] border border-gray-100 px-3 py-4 sm:px-6 sm:py-6 lg:px-10">
-            {/* Mobile: horizontal scroll row */}
-            <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:hidden -mx-1 px-1" style={{ scrollbarWidth: 'none' }}>
-              {SERVICES_HERO_FEATURES.map((item) => (
-                <div
-                  key={item.label}
-                  className="snap-start shrink-0 flex flex-col items-center text-center w-[78px] gap-1.5"
-                >
-                  <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                    <RealisticIcon src={item.icon} alt={item.label} size="xs" />
-                  </div>
-                  <p className="text-[#102a5e] font-bold text-[9px] leading-tight">{item.label}</p>
+      {/* Feature bar — placed cleanly after hero banner */}
+      <div className={`${PAGE_MAX} py-6 sm:py-8 lg:py-10`}>
+        <div className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(16,42,94,0.08)] border border-gray-100 px-3 py-4 sm:px-6 sm:py-6 lg:px-10">
+          {/* Mobile: horizontal scroll row */}
+          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:hidden -mx-1 px-1" style={{ scrollbarWidth: 'none' }}>
+            {SERVICES_HERO_FEATURES.map((item) => (
+              <div
+                key={item.label}
+                className="snap-start shrink-0 flex flex-col items-center text-center w-[78px] gap-1.5"
+              >
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                  <RealisticIcon src={item.icon} alt={item.label} size="xs" />
                 </div>
-              ))}
-            </div>
+                <p className="text-[#102a5e] font-bold text-[9px] leading-tight">{item.label}</p>
+              </div>
+            ))}
+          </div>
 
-            {/* Desktop: 4-column grid */}
-            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 lg:gap-y-0">
-              {SERVICES_HERO_FEATURES.map((item) => (
-                <div key={item.label} className="flex items-center gap-3 min-w-0">
-                  <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                    <RealisticIcon src={item.icon} alt={item.label} size="xs" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[#102a5e] font-bold text-sm leading-tight">{item.label}</p>
-                    <p className="text-gray-400 text-xs mt-0.5 leading-snug">{item.sublabel}</p>
-                  </div>
+          {/* Desktop: 4-column grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 lg:gap-y-0">
+            {SERVICES_HERO_FEATURES.map((item) => (
+              <div key={item.label} className="flex items-center gap-3 min-w-0">
+                <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <RealisticIcon src={item.icon} alt={item.label} size="xs" />
                 </div>
-              ))}
-            </div>
+                <div className="min-w-0">
+                  <p className="text-[#102a5e] font-bold text-sm leading-tight">{item.label}</p>
+                  <p className="text-gray-400 text-xs mt-0.5 leading-snug">{item.sublabel}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

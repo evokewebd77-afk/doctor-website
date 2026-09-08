@@ -1,5 +1,7 @@
 import { RI } from './realisticIcons'
 
+export const DOCTORS_HERO_IMAGE = '/doct.png'
+
 export const DOCTORS_HERO_BG =
   'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782905713/ChatGPT_Image_Jul_1_2026_05_04_52_PM_an3tvz.png'
 

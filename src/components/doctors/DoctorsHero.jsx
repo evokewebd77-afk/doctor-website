@@ -1,31 +1,33 @@
 import { Link } from 'react-router-dom'
 import { Calendar, Phone } from 'lucide-react'
 import { PAGE_MAX, CLINIC_PHONE } from '../../data/constants'
-import { DOCTORS_HERO_BG, DOCTORS_HERO_AVATAR } from '../../data/doctorsData'
+import { DOCTORS_HERO_IMAGE } from '../../data/doctorsData'
 import Header from '../Header'
 import CloudinaryImage from '../media/CloudinaryImage'
-import CloudinaryVideo from '../media/CloudinaryVideo'
 
 export default function DoctorsHero() {
   return (
-    <section className="relative w-full bg-[#f8fafe] overflow-x-hidden min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] flex flex-col">
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full bg-[#f8fafe] overflow-x-hidden min-h-[540px] sm:min-h-[600px] lg:min-h-[660px] flex flex-col">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <CloudinaryImage
-          src={DOCTORS_HERO_BG}
-          alt=""
-          aria-hidden
+          src={DOCTORS_HERO_IMAGE}
+          alt="Family Cure Clinic Doctor Consulting Patient"
           variant="hero"
-          className="w-full h-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] object-cover object-center"
+          className="w-full h-full object-cover object-[85%_70%] md:object-[100%_35%] pointer-events-none select-none"
         />
+        {/* Mobile gradient for complete text clarity */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe] via-[#f8fafe]/95 via-55% to-transparent" />
+        {/* Desktop subtle gradient on left to guarantee text readability without blurring patient */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/90 via-45% to-transparent w-full md:w-[65%] lg:w-[50%]" />
       </div>
 
       <Header />
 
       <div
-        className={`relative z-10 flex-1 ${PAGE_MAX} pt-8 sm:pt-10 lg:pt-12 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-end`}
+        className={`relative z-10 flex-1 ${PAGE_MAX} flex flex-col justify-center min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] py-10 sm:py-14 lg:py-16`}
       >
-        <div className="space-y-4 sm:space-y-5 order-1 pb-8 sm:pb-10 lg:pb-12 self-center lg:self-end">
-          <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full">
+        <div className="w-full max-w-[480px] lg:max-w-[42%] space-y-4 sm:space-y-5">
+          <span className="inline-block bg-white text-blue-600 font-bold tracking-[0.14em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200/80 shadow-sm">
             Our Doctors
           </span>
 
@@ -33,7 +35,7 @@ export default function DoctorsHero() {
             Expert Care. For You and Your Family.
           </h1>
 
-          <p className="text-gray-500 text-[13px] sm:text-[15px] leading-relaxed max-w-lg">
+          <p className="text-[#2b3a55] text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg">
             Our team of experienced doctors is committed to providing personalized, compassionate healthcare —
             guiding you and your loved ones through every step of your health journey.
           </p>
@@ -41,7 +43,7 @@ export default function DoctorsHero() {
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1">
             <a
               href={`tel:${CLINIC_PHONE}`}
-              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto shadow-[0_4px_16px_rgba(37,99,235,0.25)]"
             >
               <Phone className="w-4 h-4" />
               Call Us Now
@@ -54,17 +56,6 @@ export default function DoctorsHero() {
               Book Appointment
             </Link>
           </div>
-        </div>
-
-        <div className="order-2 flex justify-center lg:justify-end items-end self-end overflow-visible">
-          <CloudinaryVideo
-            src={DOCTORS_HERO_AVATAR}
-            variant="avatar"
-            fit="contain"
-            blendMode="screen"
-            className="h-[min(400px,58vh)] sm:h-[min(460px,64vh)] lg:h-[min(540px,calc(560px-5rem))] w-auto max-w-full scale-105 sm:scale-110 lg:scale-[1.15] origin-bottom lg:origin-bottom-right object-bottom pointer-events-none drop-shadow-[0_12px_32px_rgba(16,42,94,0.12)]"
-            aria-label="Doctor at Family Cure Clinic"
-          />
         </div>
       </div>
     </section>

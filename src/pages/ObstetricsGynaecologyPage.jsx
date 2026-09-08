@@ -24,11 +24,10 @@ const OBGYN_DOCTOR = DOCTORS_LIST.find((doctor) => doctor.specialty === 'Obstetr
 const HERO_BG =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783487760/ChatGPT_Image_Jul_8_2026_10_43_14_AM_lhg6d5.png'
 
-const HERO_IMAGE =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783419963/ChatGPT_Image_Jul_7_2026_03_55_38_PM_njz9zo.png'
+const HERO_IMAGE = '/gy.png'
 
 const TREATMENT_IMAGES = [
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783491198/pregnancy_ultrasound_consultation_high_resolution_1_ptscob.png',
+  '/gynae.png',
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783491205/womens_health_consultation_high_resolution_jpks02.png',
 ]
 
@@ -227,13 +226,13 @@ export default function ObstetricsGynaecologyPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[320px] sm:min-h-[380px] lg:min-h-[430px]">
-              <div className="absolute inset-0 overflow-hidden rounded-[28px] border border-white/80 bg-white shadow-[0_18px_56px_rgba(16,42,94,0.14)]">
+            <div className="relative w-full aspect-[16/10] sm:aspect-auto sm:min-h-[380px] lg:min-h-[430px]">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl sm:rounded-[28px] border border-white/80 bg-white shadow-[0_18px_56px_rgba(16,42,94,0.14)]">
                 <CloudinaryImage
                   src={HERO_IMAGE}
-                  alt="Female doctor consulting a pregnant patient during ultrasound"
+                  alt="Doctor Pooja Jafra consulting a pregnant patient"
                   variant="hero"
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-cover object-[58%_center] sm:object-[center_18%]"
                 />
               </div>
             </div>

@@ -27,8 +27,11 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services/general-medicine" element={<GeneralMedicinePage />} />
+          <Route path="/general-medicine" element={<GeneralMedicinePage />} />
           <Route path="/services/obstetrics-gynaecology" element={<ObstetricsGynaecologyPage />} />
+          <Route path="/obstetrics-gynaecology" element={<ObstetricsGynaecologyPage />} />
           <Route path="/services/pediatrics-neonatology" element={<PediatricsNeonatologyPage />} />
+          <Route path="/pediatrics-neonatology" element={<PediatricsNeonatologyPage />} />
           <Route path="/doctors" element={<DoctorsPage />} />
         </Routes>
         <div className="hidden md:block">

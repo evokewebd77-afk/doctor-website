@@ -10,6 +10,8 @@ import {
   CLINIC_EMAIL,
 } from './constants'
 
+export const CONTACT_HERO_IMAGE = '/contact.png'
+
 export const CONTACT_HERO_VIDEO =
   'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782899968/AQNk-ty4JTAQN-kQ3aaNQA_PnlZ1r-ZlkM8FnflXtXVQAyz_fbgiQU9zBb9eqUBsE9tLxOt9WjQUWm2hgA4GTz13JkC0is0i3paEPCwo1rbrv9FsTL3Tk1x4Nmz8tq8b.mp4_uqkq3v.mp4'
 

@@ -6,7 +6,8 @@ export function isCloudinaryUrl(url) {
 export function cloudinaryUrl(url, transforms) {
   if (!isCloudinaryUrl(url) || !transforms) return url
   if (url.includes(transforms)) return url
-  return url.replace('/upload/', `/upload/${transforms}/`)
+  const normalized = url.replace(/\/upload\/(?:[a-zA-Z0-9_,:]+\/)*(v\d+)/, '/upload/$1')
+  return normalized.replace('/upload/', `/upload/${transforms}/`)
 }
 
 export const TRANSFORMS = {

@@ -8,7 +8,6 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
-      <div className="h-24 sm:h-28 lg:h-32" aria-hidden />
       <ContactMainSection />
       <ContactMapWhy />
       <ContactQuickHelp />

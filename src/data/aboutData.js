@@ -1,6 +1,9 @@
 import { RI } from './realisticIcons'
 import { DOCTORS_LIST } from './doctorsData'
 
+export const ABOUT_HERO_IMAGE =
+  'https://res.cloudinary.com/didtfhfme/image/upload/v1788848769/ChatGPT_Image_Sep_8_2026_11_55_14_AM_odoaew.png'
+
 export const ABOUT_HERO_VIDEO =
   'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782903544/AQNT7hYvftDC_lTT4hZgTGVKC548wdV64ZsKaLoN3cjf0hKitNJtVKffK2dNHkN9kIkOPGoWqNw7dYo3VIJ--ee_zd9ZOt8o_TwcHcS0l5JgHzVOpolLvwFnDU0KGpvc.mp4_btho1b.mp4'
 

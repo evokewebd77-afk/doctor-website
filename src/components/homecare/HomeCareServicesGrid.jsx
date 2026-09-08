@@ -24,7 +24,7 @@ export default function HomeCareServicesGrid() {
   const close = () => setSelected(null)
 
   return (
-    <section className={`${PAGE_MAX} pt-16 sm:pt-24 lg:pt-28 pb-4 sm:pb-8 w-full`}>
+    <section className={`${PAGE_MAX} pt-6 sm:pt-10 lg:pt-12 pb-4 sm:pb-8 w-full`}>
       <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-10 px-1">
         <p className="text-blue-500 font-bold tracking-[0.2em] text-[10px] uppercase mb-2">We Come to You</p>
         <h2 className="font-serif-display text-lg sm:text-3xl lg:text-[2.25rem] font-bold text-[#102a5e] mb-2 flex items-center justify-center gap-2">

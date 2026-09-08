@@ -3,8 +3,7 @@ import { RI } from './realisticIcons'
 export const HOME_CARE_HERO_VIDEO =
   'https://res.cloudinary.com/dwnnakrrh/video/upload/v1782897231/AQPFt2IpJbpqvVo3Evb92TJzEtzKCY3m3Ah37xOJAVgtd6xeaNO7BQFXhPEF4jm7a_y1LKL76vhGBVB7_3kSP8JGRmJNaPQNRQEeEC3HB4krFXRIA3s8DJOC6lT-4LSA.mp4_dkh0dk.mp4'
 
-export const HOME_CARE_HERO_IMAGE =
-  'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&h=700&q=80'
+export const HOME_CARE_HERO_IMAGE = '/care.png'
 
 export const HOME_CARE_HERO_FEATURES = [
   { label: 'Qualified Professionals', sublabel: 'Trained & Verified', icon: RI.verified },

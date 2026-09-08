@@ -20,7 +20,7 @@ export default function LabServicesGrid() {
   const close = () => setSelected(null)
 
   return (
-    <section className={`${PAGE_MAX} pt-20 sm:pt-24 pb-8 sm:pb-12 w-full`}>
+    <section id="lab-services" className={`${PAGE_MAX} pt-6 sm:pt-10 pb-8 sm:pb-12 w-full scroll-mt-24`}>
       <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
         <p className="text-blue-500 font-bold tracking-[0.2em] text-[10px] sm:text-[11px] uppercase mb-3">
           What We Offer

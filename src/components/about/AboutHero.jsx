@@ -1,36 +1,38 @@
 import { PAGE_MAX } from '../../data/constants'
-import { ABOUT_HERO_VIDEO } from '../../data/aboutData'
+import { ABOUT_HERO_IMAGE } from '../../data/aboutData'
 import Header from '../Header'
-import CloudinaryVideo from '../media/CloudinaryVideo'
+import CloudinaryImage from '../media/CloudinaryImage'
 
 export default function AboutHero() {
   return (
     <section className="relative w-full bg-[#f8fafe]">
       <Header />
 
-      <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
+      <div className="relative w-full min-h-[520px] sm:min-h-[580px] lg:min-h-[640px]">
         <div className="absolute inset-0 overflow-hidden">
-          <CloudinaryVideo
-            src={ABOUT_HERO_VIDEO}
-            className="absolute inset-0 w-full h-full object-[70%_center] sm:object-right pointer-events-none"
-            objectPosition="70% center"
-            aria-hidden
+          <CloudinaryImage
+            src={ABOUT_HERO_IMAGE}
+            alt="Family Cure Clinic doctor consulting with a family"
+            variant="hero"
+            className="w-full h-full object-cover object-[85%_70%] md:object-[100%_30%] pointer-events-none select-none"
           />
-          {/* Gradient backdrop for text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent w-full sm:w-[85%] md:w-[75%]" />
+          {/* Mobile gradient (top-down) for complete text clarity */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe] via-[#f8fafe]/95 via-55% to-transparent" />
+          {/* Desktop gradient (left-to-right) */}
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/95 via-45% to-transparent w-full md:w-[70%] lg:w-[56%]" />
         </div>
 
-        <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] py-10 sm:py-14 lg:py-16`}>
-          <div className="w-full max-w-[520px] lg:max-w-[48%] space-y-4 sm:space-y-5">
-            <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full">
+        <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[440px] sm:min-h-[500px] lg:min-h-[560px] py-10 sm:py-14 lg:py-16`}>
+          <div className="w-full max-w-[500px] lg:max-w-[46%] space-y-4 sm:space-y-5">
+            <span className="inline-block bg-white text-blue-600 font-bold tracking-[0.14em] text-[10px] sm:text-[11px] uppercase px-4 py-1.5 rounded-full border border-blue-200/80 shadow-sm">
               About Us
             </span>
 
-            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#102a5e] leading-[1.12]">
+            <h1 className="font-serif-display text-[1.75rem] sm:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.65rem] font-bold text-[#102a5e] leading-[1.15]">
               Caring for Families, Building Healthier Lives
             </h1>
 
-            <p className="text-gray-500 text-[13px] sm:text-[15px] leading-relaxed max-w-lg">
+            <p className="text-[#2b3a55] text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg">
               At Family Cure Clinic, we are dedicated to providing compassionate, high-quality healthcare for you and
               your loved ones. From routine check-ups to specialized treatments, our team is here to support your
               family&apos;s health journey with expertise and care.
