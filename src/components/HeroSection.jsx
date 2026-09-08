@@ -5,7 +5,7 @@ import { HERO_SLIDES, HERO_SLIDE_IMAGE_OPTS, HOME_EMERGENCY_PHONE, HOME_EMERGENC
 import Header from './Header'
 import CloudinaryImage from './media/CloudinaryImage'
 
-const SLIDE_INTERVAL_MS = 6000
+const SLIDE_INTERVAL_MS = 4000
 
 const HERO_SLIDE_ALTS = [
   'Family Cure Clinic reception',
