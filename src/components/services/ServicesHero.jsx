@@ -20,24 +20,24 @@ export default function ServicesHero() {
             variant="hero"
             className="w-full h-full object-cover object-[80%_top] sm:object-[80%_top] lg:object-right-top pointer-events-none select-none"
           />
-          {/* Mobile gradient (top-down) with decreased opacity so image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white/40 via-white/15 via-45% to-transparent pointer-events-none" />
+          {/* Mobile gradient (top-down) ensuring crisp contrast for white text while keeping image visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/40 via-55% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
         </div>
 
         <div className={`relative z-10 ${PAGE_MAX} flex flex-col justify-center min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] py-10 sm:py-14 lg:py-16`}>
           <div className="w-full lg:max-w-[44%] space-y-3.5 sm:space-y-5">
-            <span className="inline-block bg-[#e8f1fd] text-blue-600 font-bold tracking-[0.12em] text-[10px] uppercase px-3.5 py-1 rounded-full">
+            <span className="inline-block bg-blue-600 text-white md:bg-[#e8f1fd] md:text-blue-600 font-bold tracking-[0.12em] text-[10px] uppercase px-3.5 py-1 rounded-full shadow-sm">
               Our Services
             </span>
 
-            <h1 className="font-serif-display text-[1.65rem] leading-[1.15] sm:text-[clamp(1.9rem,3.5vw,3rem)] font-bold text-[#102a5e]">
+            <h1 className="font-serif-display text-[1.65rem] leading-[1.15] sm:text-[clamp(1.9rem,3.5vw,3rem)] font-bold text-white md:text-[#102a5e] [text-shadow:_0_2px_8px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Comprehensive Care for{' '}
-              <span className="text-blue-600">Every Stage</span> of Life
+              <span className="text-blue-300 md:text-blue-600">Every Stage</span> of Life
             </h1>
 
-            <p className="text-[#0a1f47] md:text-gray-500 text-[13.5px] sm:text-[15px] font-semibold sm:font-normal leading-relaxed max-w-lg">
+            <p className="text-white/95 md:text-gray-500 text-[13.5px] sm:text-[15px] font-medium sm:font-normal leading-relaxed max-w-lg [text-shadow:_0_1px_6px_rgba(0,0,0,0.85)] md:[text-shadow:none]">
               Exceptional care, advanced technology, and compassionate experts — all under one roof, for you and your
               family.
             </p>
