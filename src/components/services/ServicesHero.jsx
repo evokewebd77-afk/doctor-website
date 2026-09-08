@@ -20,8 +20,8 @@ export default function ServicesHero() {
             variant="hero"
             className="w-full h-full object-cover object-[80%_top] sm:object-[80%_top] lg:object-right-top pointer-events-none select-none"
           />
-          {/* Mobile gradient (top-down) with reduced opacity so image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white/75 via-white/40 via-50% to-transparent pointer-events-none" />
+          {/* Mobile gradient (top-down) with decreased opacity so image is clearly visible */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-white/40 via-white/15 via-45% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent w-full md:w-[75%]" />
         </div>

@@ -17,7 +17,7 @@ export default function AboutHero() {
             className="w-full h-full object-cover object-[85%_bottom] md:object-[100%_30%] pointer-events-none select-none"
           />
           {/* Mobile gradient with decreased opacity so image is clearly visible */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/75 via-[#f8fafe]/45 via-50% to-transparent pointer-events-none" />
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-[#f8fafe]/40 via-[#f8fafe]/15 via-45% to-transparent pointer-events-none" />
           {/* Desktop gradient (left-to-right) */}
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#f8fafe] via-[#f8fafe]/95 via-45% to-transparent w-full md:w-[70%] lg:w-[56%]" />
         </div>
