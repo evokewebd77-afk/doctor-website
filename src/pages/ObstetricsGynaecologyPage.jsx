@@ -24,7 +24,7 @@ const OBGYN_DOCTOR = DOCTORS_LIST.find((doctor) => doctor.specialty === 'Obstetr
 const HERO_BG =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783487760/ChatGPT_Image_Jul_8_2026_10_43_14_AM_lhg6d5.png'
 
-const HERO_IMAGE = '/gy.png'
+const HERO_IMAGE = '/gy1.png'
 
 const TREATMENT_IMAGES = [
   '/gynae.png',
