@@ -1,7 +1,9 @@
-import { ArrowRight, Check, Calendar, Clock, ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CLINIC_WHATSAPP_URL, PAGE_MAX } from '../data/constants'
+import { ArrowRight, Check, Calendar, Clock, ChevronDown, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
+import { FORM_WHATSAPP_URL, PAGE_MAX } from '../data/constants'
 import CloudinaryImage from './media/CloudinaryImage'
+import { submitBooking } from '../utils/submitBooking'
 
 const TECH_BG =
   'https://res.cloudinary.com/drm8wdb7m/image/upload/f_auto,q_90,dpr_auto,w_3200,c_limit/v1784607521/ChatGPT_Image_Jul_21_2026_09_46_06_AM_autbvi.png'
@@ -14,6 +16,53 @@ const TECH_FEATURES = [
 ]
 
 export default function TechnologyAppointmentSection() {
+  const [form, setForm] = useState({
+    fullName: '',
+    phone: '',
+    department: '',
+    date: '',
+    time: '',
+    message: '',
+  })
+  const [status, setStatus] = useState('idle')
+  const [feedback, setFeedback] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!form.fullName.trim() || !form.phone.trim()) {
+      setStatus('error')
+      setFeedback('Please fill in your name and phone number.')
+      return
+    }
+
+    setStatus('submitting')
+    setFeedback('')
+
+    try {
+      await submitBooking({
+        source: 'booking',
+        fullName: form.fullName.trim(),
+        phone: form.phone.trim(),
+        department: form.department,
+        doctor: form.department,
+        date: form.date,
+        time: form.time,
+        message: form.message.trim(),
+      })
+      setStatus('success')
+      setFeedback('Thank you for booking! Your request has been sent for confirmation.')
+      setForm({ fullName: '', phone: '', department: '', date: '', time: '', message: '' })
+    } catch (err) {
+      setStatus('error')
+      setFeedback('Something went wrong. Please try again or call the clinic.')
+    }
+  }
+
   return (
     <section id="book-appointment" className={`${PAGE_MAX} py-6 sm:py-8 lg:py-10 w-full scroll-mt-20`}>
       <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
@@ -64,24 +113,34 @@ export default function TechnologyAppointmentSection() {
           </h2>
           <p className="text-white/75 text-[13px] sm:text-sm mb-5 sm:mb-7">Fast, Easy & Hassle-Free</p>
 
-          <form className="space-y-3 sm:space-y-3.5" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-3 sm:space-y-3.5" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
               <input
                 type="text"
+                name="fullName"
                 placeholder="Full Name"
+                value={form.fullName}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 text-sm placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-blue-300"
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
+                value={form.phone}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 text-sm placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
             <div className="relative">
               <select
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-xl bg-white text-gray-400 text-sm appearance-none outline-none focus:ring-2 focus:ring-blue-300"
+                name="department"
+                value={form.department}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-xl bg-white text-sm appearance-none outline-none focus:ring-2 focus:ring-blue-300 ${
+                  form.department ? 'text-gray-800' : 'text-gray-400'
+                }`}
               >
                 <option value="" disabled>
                   Select Department
@@ -99,6 +158,9 @@ export default function TechnologyAppointmentSection() {
               <div className="relative">
                 <input
                   type="date"
+                  name="date"
+                  value={form.date}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 text-sm outline-none focus:ring-2 focus:ring-blue-300"
                 />
                 <Calendar className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -106,6 +168,9 @@ export default function TechnologyAppointmentSection() {
               <div className="relative">
                 <input
                   type="time"
+                  name="time"
+                  value={form.time}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-white text-gray-800 text-sm outline-none focus:ring-2 focus:ring-blue-300"
                 />
                 <Clock className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -114,21 +179,47 @@ export default function TechnologyAppointmentSection() {
 
             <textarea
               rows={3}
+              name="message"
               placeholder="Message (optional)"
+              value={form.message}
+              onChange={handleChange}
               className="w-full resize-none px-4 py-3 rounded-xl bg-white text-gray-800 text-sm placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-blue-300"
             />
 
+            {status === 'success' && (
+              <div className="flex items-start gap-2 bg-green-500/15 border border-green-400/40 text-green-100 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl">
+                <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
+                {feedback}
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="flex items-start gap-2 bg-red-500/15 border border-red-400/40 text-red-100 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl">
+                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                {feedback}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a017] via-[#f5c842] to-[#eab308] py-3.5 text-sm font-bold uppercase tracking-wide text-[#0b1f45] shadow-[0_8px_24px_rgba(212,160,23,0.35)] transition-all hover:brightness-105 sm:mt-2"
+              disabled={status === 'submitting'}
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a017] via-[#f5c842] to-[#eab308] py-3.5 text-sm font-bold uppercase tracking-wide text-[#0b1f45] shadow-[0_8px_24px_rgba(212,160,23,0.35)] transition-all hover:brightness-105 disabled:opacity-60 disabled:cursor-not-allowed sm:mt-2"
             >
-              Confirm Appointment
-              <ArrowRight className="w-4 h-4" />
+              {status === 'submitting' ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  Confirm Appointment
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
             </button>
           </form>
 
           <a
-            href={CLINIC_WHATSAPP_URL}
+            href={FORM_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 text-center text-xs font-medium text-white/80 transition-colors hover:text-[#f5c842] sm:text-sm"

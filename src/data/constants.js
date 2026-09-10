@@ -72,6 +72,7 @@ export const CLINIC_PHONE_DISPLAY_FULL = 'M: 70871-51555'
 export const HOME_EMERGENCY_PHONE = '+917087151555'
 export const HOME_EMERGENCY_PHONE_DISPLAY = '70871-51555'
 export const CLINIC_WHATSAPP = '919988827699'
+export const FORM_WHATSAPP = '917087151555'
 export const CLINIC_ADDRESS_LINE1 = 'Aeroview Showroom, SCO 11, Near Tech Town'
 export const CLINIC_ADDRESS_LINE2 = 'I-Block Aerocity, Mohali'
 export const CLINIC_ADDRESS = `${CLINIC_ADDRESS_LINE1}, ${CLINIC_ADDRESS_LINE2}`
@@ -82,6 +83,7 @@ export const CLINIC_MAPS_URL = `https://www.google.com/maps/place/Family+cure+cl
 
 export const CLINIC_GOOGLE_REVIEWS_URL = `https://www.google.com/maps/place/Family+cure+clinic/@30.6291189,76.7820431,17z/data=!4m8!3m7!1s0x390feb6615e82cb1:0xf73b87b7b9670a70!8m2!3d30.6291189!4d76.7820431!9m1!1b1!16s%2Fg%2F11pzr0h60w`
 export const CLINIC_WHATSAPP_URL = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent('Hello Family Cure Clinic, I would like to book an appointment.')}`
+export const FORM_WHATSAPP_URL = `https://wa.me/${FORM_WHATSAPP}?text=${encodeURIComponent('Hello Family Cure Clinic, I would like to book an appointment.')}`
 export const CLINIC_INSTAGRAM_URL = 'https://www.instagram.com/family_cure_clinic/'
 export const CLINIC_MAPS_EMBED_URL = `https://www.google.com/maps?q=${CLINIC_LAT},${CLINIC_LNG}&z=17&output=embed`
 
