@@ -14,8 +14,12 @@ export const BOOKING_THANK_YOU =
  * - Save row to Google Sheets
  * - When doctor replies YES → message patient "Your booking is confirmed"
  */
+/** Fallback used when the build env has no VITE_N8N_WEBHOOK_URL (e.g. CI deploys). */
+export const DEFAULT_N8N_WEBHOOK_URL =
+  'https://damnart-ai-guladab.n8n-wsk.com/webhook/dcee6a5b-21c5-41d8-adb5-85c070c0b703'
+
 export async function submitBooking(payload) {
-  const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL?.trim()
+  const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL?.trim() || DEFAULT_N8N_WEBHOOK_URL
 
   if (!webhookUrl) {
     throw new Error(
