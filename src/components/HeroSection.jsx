@@ -9,9 +9,8 @@ const SLIDE_INTERVAL_MS = 3000
 
 const HERO_SLIDE_ALTS = [
   'Family Cure Clinic reception',
-  'Family Cure Clinic doctors team',
   'Family Cure Clinic patient care',
-  'Family Cure Clinic emergency care',
+  'Family Cure Clinic doctors team',
   'Family Cure Clinic medical team',
 ]
 

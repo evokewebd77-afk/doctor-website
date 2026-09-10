@@ -7,12 +7,9 @@ export const HERO_BG_2 =
 export const HERO_BG_3 =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783399636/ChatGPT_Image_Jul_7_2026_10_16_50_AM_cjvwn9.png'
 
-export const HERO_BG_4 =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783923697/2fd7a7fc-ba25-4c63-94fa-d0718ac5e8f5_ewdjih.png'
+export const HERO_BG_4 = '/4sl.png'
 
-export const HERO_BG_5 = '/ds.png'
-
-export const HERO_SLIDES = [HERO_BG, HERO_BG_3, HERO_BG_2, HERO_BG_5, HERO_BG_4]
+export const HERO_SLIDES = [HERO_BG, HERO_BG_3, HERO_BG_2, HERO_BG_4]
 
 /** Per-slide image fit — wide banners avoid cropping the top */
 export const HERO_SLIDE_IMAGE_OPTS = [
@@ -20,7 +17,6 @@ export const HERO_SLIDE_IMAGE_OPTS = [
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-[right_top]', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
   { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-cover object-right-top', mobileAspect: 'aspect-[16/11] sm:aspect-[16/10]' },
-  { desktop: 'object-cover object-[right_top] lg:object-right-top', mobile: 'object-contain object-center bg-white', mobileAspect: 'aspect-[4/3] sm:aspect-[16/11]' },
 ]
 
 export const FAMILY_IMG =
@@ -70,9 +66,9 @@ export const FOOTER_QUICK_LINK_ROUTES = {
 export const PAGE_MAX =
   'w-full max-w-[min(100%,1320px)] xl:max-w-[min(100%,1480px)] 2xl:max-w-[min(100%,1680px)] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16'
 
-export const CLINIC_PHONE = '+919988827699'
-export const CLINIC_PHONE_DISPLAY = '99888-27699'
-export const CLINIC_PHONE_DISPLAY_FULL = 'M: 99888-27699'
+export const CLINIC_PHONE = '+917087151555'
+export const CLINIC_PHONE_DISPLAY = '70871-51555'
+export const CLINIC_PHONE_DISPLAY_FULL = 'M: 70871-51555'
 export const HOME_EMERGENCY_PHONE = '+917087151555'
 export const HOME_EMERGENCY_PHONE_DISPLAY = '70871-51555'
 export const CLINIC_WHATSAPP = '919988827699'

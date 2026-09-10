@@ -14,10 +14,11 @@ export const DOCTORS_LIST = [
     qualifications: 'MD Physician, FICM, ICCMID',
     specialty: 'General Medicine',
     rating: '4.9',
+    phone: '+919988827699',
     bio: 'Expert in diabetes, hypertension, infectious diseases, thyroid disorders and chronic disease management for adults and families.',
-    image: 'https://res.cloudinary.com/dwnnakrrh/image/upload/v1782807406/ChatGPT_Image_Jun_30_2026_01_04_44_PM_3_sgbwrb.png',
+    image: '/main-doc.png',
     highlights: [
-      { text: '15+ Years of Experience', icon: RI.calendar },
+      { text: '20+ Years of Experience', icon: RI.calendar },
       { text: 'Diabetes & Hypertension Care', icon: RI.heart },
       { text: 'Preventive Health Checkups', icon: RI.shield },
       { text: 'Chronic Disease Management', icon: RI.stethoscope },

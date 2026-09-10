@@ -7,7 +7,7 @@ export const ACHIEVEMENTS_HERO = {
 }
 
 export const ACHIEVEMENT_STATS = [
-  { value: '15+', label: 'Years Experience' },
+  { value: '20+', label: 'Years Experience' },
   { value: '5+', label: 'Certifications' },
   { value: 'MCI', label: 'Registered Physician' },
   { value: 'AHA', label: 'BLS & ACLS Trained' },

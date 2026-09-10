@@ -4,8 +4,7 @@ import { DOCTORS_LIST } from './doctorsData'
 export const GM_HERO_BG =
   'https://res.cloudinary.com/j6lurplk/image/upload/v1783404356/hero_bg_no_doctor_clean_medical_sw5wnb.png'
 
-export const GM_HERO_IMAGE =
-  'https://res.cloudinary.com/j6lurplk/image/upload/v1783402237/18f09d45-9a18-4bb6-9874-6a10e3d0aa91_hgnely.png'
+export const GM_HERO_IMAGE = '/gen-hero.png'
 
 export const GM_HERO_BOTTOM_FEATURES = [
   { label: 'Expert Physicians', sublabel: 'Experienced & Caring', icon: RI.doctor, accent: 'blue' },
@@ -55,7 +54,7 @@ export const GM_WHY_CHOOSE = [
 export const GM_DOCTOR = DOCTORS_LIST.find((d) => d.specialty === 'General Medicine')
 
 export const GM_DOCTOR_STATS = [
-  { value: '15+', label: 'Experience', icon: RI.calendar },
+  { value: '20+', label: 'Experience', icon: RI.calendar },
   { value: '5000+', label: 'Happy Patients', icon: RI.users },
   { value: '98%', label: 'Satisfaction', icon: RI.verified },
 ]
@@ -77,7 +76,7 @@ export const GM_INFO_ITEMS = [
 
 export const GM_STATS = [
   { value: '5000+', label: 'Happy Patients', icon: RI.users },
-  { value: '15+', label: 'Years Experience', icon: RI.calendar },
+  { value: '20+', label: 'Years Experience', icon: RI.calendar },
   { value: '6 Days', label: 'OPD Available', icon: RI.clock },
   { value: '98%', label: 'Patient Satisfaction', icon: RI.verified },
 ]

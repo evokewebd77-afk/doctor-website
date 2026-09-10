@@ -13,8 +13,6 @@ import {
   PAGE_MAX,
   CLINIC_LOGO,
   CLINIC_ADDRESS,
-  CLINIC_PHONE,
-  CLINIC_PHONE_DISPLAY,
   CLINIC_EMAIL,
   HOME_EMERGENCY_PHONE,
   HOME_EMERGENCY_PHONE_DISPLAY,
@@ -217,11 +215,11 @@ export default function Footer() {
 
                 {/* Phone */}
                 <a
-                  href={`tel:${CLINIC_PHONE}`}
+                  href={`tel:${HOME_EMERGENCY_PHONE}`}
                   className="flex items-center gap-2.5 text-blue-100/90 hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4 text-blue-300 shrink-0" />
-                  <span className="font-semibold">{CLINIC_PHONE_DISPLAY}</span>
+                  <span className="font-semibold">{HOME_EMERGENCY_PHONE_DISPLAY}</span>
                 </a>
 
                 {/* Email */}

@@ -22,12 +22,12 @@ export default function DoctorsGrid() {
             key={doctor.name}
             className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_24px_rgba(16,42,94,0.08)] overflow-hidden flex flex-col"
           >
-            <div className="bg-[#f0f4fa] flex items-end justify-center px-3 pt-4 sm:px-4 sm:pt-5">
+            <div className="relative h-[240px] sm:h-[270px] bg-[#f0f4fa] flex items-end justify-center px-3 pt-4 sm:px-4 sm:pt-5 overflow-hidden">
               <CloudinaryImage
                 src={doctor.image}
                 alt={doctor.name}
                 variant="portrait"
-                className="w-full h-auto object-contain object-bottom"
+                className="w-full h-full max-h-[230px] sm:max-h-[260px] object-contain object-bottom"
               />
             </div>
 
@@ -48,7 +48,7 @@ export default function DoctorsGrid() {
 
               <div className="flex flex-col sm:flex-row gap-2.5 mt-5 pt-4 border-t border-gray-100">
                 <a
-                  href={`tel:${CLINIC_PHONE}`}
+                  href={`tel:${doctor.phone || CLINIC_PHONE}`}
                   className="flex-1 text-xs font-bold text-white bg-blue-600 px-4 py-2.5 rounded-full flex items-center justify-center gap-1.5 hover:bg-blue-700 transition-colors uppercase tracking-wide"
                 >
                   <Phone className="w-3.5 h-3.5" />
